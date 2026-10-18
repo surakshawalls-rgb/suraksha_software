@@ -74,12 +74,20 @@ export class PageComponent implements OnInit, OnDestroy {
   readonly selectedCourse = computed(() => COURSES.find(item => `/training/${item.slug}` === this.currentPath()));
 
   constructor() {
-    // Run the home page animations whenever the home page is shown.
+    // Run full-page animations whenever any route, detail view, or pageKind renders.
     effect(onCleanup => {
-      if (this.pageKind() !== 'home') return;
+      this.currentPath();
+      this.pageKind();
+      this.selectedService();
+      this.selectedCourse();
       let stop: (() => void) | undefined;
-      const frame = requestAnimationFrame(() => { stop = initHomeMotion(); });
-      onCleanup(() => { cancelAnimationFrame(frame); stop?.(); });
+      const timer = window.setTimeout(() => {
+        stop = initHomeMotion();
+      }, 20);
+      onCleanup(() => {
+        window.clearTimeout(timer);
+        stop?.();
+      });
     });
   }
 
