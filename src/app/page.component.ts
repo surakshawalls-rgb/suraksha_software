@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, computed, inject, signal } from '@angular/core';
+import { Component, OnDestroy, OnInit, computed, effect, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
@@ -6,6 +6,7 @@ import { LucideArrowRight as ArrowRight, LucideCheck as Check, LucideChevronDown
 import { COURSES, FAQS, PORTFOLIO, PROCESS, SERVICES, TECHNOLOGIES, Course, Service } from './content';
 import { EnquiryService, EnquiryPayload } from './enquiry.service';
 import { ServiceIconComponent } from './service-icon.component';
+import { initHomeMotion } from './home_motion';
 
 @Component({
   selector: 'app-page',
@@ -71,6 +72,16 @@ export class PageComponent implements OnInit, OnDestroy {
   });
   readonly selectedService = computed(() => SERVICES.find(item => `/services/${item.slug}` === this.currentPath()));
   readonly selectedCourse = computed(() => COURSES.find(item => `/training/${item.slug}` === this.currentPath()));
+
+  constructor() {
+    // Run the home page animations whenever the home page is shown.
+    effect(onCleanup => {
+      if (this.pageKind() !== 'home') return;
+      let stop: (() => void) | undefined;
+      const frame = requestAnimationFrame(() => { stop = initHomeMotion(); });
+      onCleanup(() => { cancelAnimationFrame(frame); stop?.(); });
+    });
+  }
 
   ngOnInit(): void {
     this.updateRoute();
