@@ -17,6 +17,8 @@ const GROUPS: Group[] = [
   { box: '.credibility-strip', items: ':scope > div', variant: 'up', base: 40, step: 85 },
   { box: '.section-heading', items: '.eyebrow, .text-link', variant: 'blur-up', base: 0, step: 90 },
   { box: '.service-grid', items: ':scope > .service-card', variant: 'up', base: 40, step: 75 },
+  { box: '.devflow-inner', items: ':scope > .devflow-copy > :not(h2):not(.devflow-points), :scope > .devflow-visual', variant: 'up', base: 40, step: 90 },
+  { box: '.devflow-points', items: ':scope > div', variant: 'right', base: 80, step: 110 },
   { box: '.dark-band .split-feature > div:first-child', items: '.eyebrow, .light-copy, .button', variant: 'blur-up', base: 40, step: 95 },
   { box: '.principles', items: ':scope > div', variant: 'right', base: 100, step: 95 },
   { box: '.training-band .split-feature > div:first-child', items: '.eyebrow, .light-copy, .button', variant: 'blur-up', base: 40, step: 95 },

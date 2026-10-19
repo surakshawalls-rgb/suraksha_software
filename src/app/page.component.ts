@@ -7,6 +7,7 @@ import { COURSES, FAQS, PORTFOLIO, PROCESS, SERVICES, TECHNOLOGIES, Course, Serv
 import { EnquiryService, EnquiryPayload } from './enquiry.service';
 import { ServiceIconComponent } from './service-icon.component';
 import { initHomeMotion } from './home_motion';
+import { initWordHover } from './word_hover';
 
 @Component({
   selector: 'app-page',
@@ -17,6 +18,7 @@ export class PageComponent implements OnInit, OnDestroy {
   private readonly router = inject(Router);
   private readonly enquiry = inject(EnquiryService);
   private routeSubscription?: Subscription;
+  private stopWordHover?: () => void;
   readonly menuOpen = signal(false);
   readonly currentPath = signal('/');
   readonly submitted = signal(false);
@@ -74,6 +76,9 @@ export class PageComponent implements OnInit, OnDestroy {
   readonly selectedCourse = computed(() => COURSES.find(item => `/training/${item.slug}` === this.currentPath()));
 
   constructor() {
+    // Words zoom slightly when the mouse moves over them, across the whole site.
+    this.stopWordHover = initWordHover();
+
     // Run full-page animations whenever any route, detail view, or pageKind renders.
     effect(onCleanup => {
       this.currentPath();
@@ -96,7 +101,7 @@ export class PageComponent implements OnInit, OnDestroy {
     this.routeSubscription = this.router.events.pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => { this.updateRoute(); this.menuOpen.set(false); window.scrollTo({ top: 0, behavior: 'instant' }); });
   }
-  ngOnDestroy(): void { this.routeSubscription?.unsubscribe(); }
+  ngOnDestroy(): void { this.routeSubscription?.unsubscribe(); this.stopWordHover?.(); }
   toggleMenu(): void { this.menuOpen.update(open => !open); }
   private updateRoute(): void {
     this.currentPath.set(this.router.url.split('?')[0].replace(/\/$/, '') || '/');

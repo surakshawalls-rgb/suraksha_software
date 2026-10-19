@@ -304,3 +304,129 @@ main.motion-on .portfolio-card:not(.in) .project-art:before,
 main.motion-on .portfolio-card:not(.in) .project-art:after{scale:.6;opacity:0}
 main.motion-on .portfolio-card:not(.in) .project-mark{scale:.4;rotate:-12deg}
 main.motion-on .portfolio-card:not(.in) .project-lines i{transform:scaleX(0)}
+/* =====================================================================
+   DEVELOPMENT ELEMENTS  (paste at the very end of src/app/app.css)
+   1) Floating code tokens around the hero dashboard
+   2) "Built like real software" section: live code editor, terminal
+      and build pipeline
+   ===================================================================== */
+
+/* ---------- 1. Hero: floating code tokens ---------- */
+.hero-token{
+  position:absolute;z-index:0;pointer-events:none;user-select:none;
+  font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.02em;
+  color:#6c93d6;background:#f2f7ff;border:1px solid #dce8fb;border-radius:6px;padding:7px 9px}
+.hero-token.token-a{left:3%;top:15%}
+.hero-token.token-b{right:1%;top:47%}
+.hero-token.token-c{left:0;top:49%}
+.hero-token.token-d{right:17%;bottom:3%}
+main.motion-on .hero-token{animation:dv-drift 7s ease-in-out infinite}
+main.motion-on .hero-token.token-b{animation-duration:8.5s;animation-delay:-2s}
+main.motion-on .hero-token.token-c{animation-duration:9s;animation-delay:-4s}
+main.motion-on .hero-token.token-d{animation-duration:7.5s;animation-delay:-1s}
+main.motion-on .hero-visual:not(.in) .hero-token{opacity:0}
+main.motion-on .hero-token{transition:opacity .9s ease 1.1s}
+@keyframes dv-drift{0%,100%{translate:0 0;rotate:0deg}50%{translate:6px -12px;rotate:-3deg}}
+
+/* ---------- 2. Section layout ---------- */
+.devflow{background:#f6f8fb;border-top:1px solid #eef1f5;border-bottom:1px solid #eef1f5;overflow-x:clip}
+.devflow-inner{display:grid;grid-template-columns:.92fr 1.08fr;gap:72px;align-items:center;padding-top:94px;padding-bottom:94px}
+.devflow-copy h2{font-size:clamp(30px,3.3vw,43px);line-height:1.17;letter-spacing:-.05em;color:var(--navy);font-weight:600;margin:0 0 18px}
+.devflow-lead{font-size:13px;line-height:1.9;color:#6d7c91;max-width:470px;margin:0 0 28px}
+.devflow-points{display:grid;gap:18px}
+.devflow-points>div{display:flex;gap:15px;align-items:flex-start}
+.devflow-points b{display:block;font-size:13px;color:#223a58;margin-bottom:4px}
+.devflow-points p{font-size:11px;line-height:1.7;color:#7a879a;margin:0}
+.dv-icon{width:35px;height:35px;flex:none;border-radius:8px;background:#e9f1ff;color:#3f73cc;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.8,.24,1),background-color .3s ease,color .3s ease}
+.devflow-points>div:hover .dv-icon{transform:translateY(-3px) rotate(-6deg);background:var(--blue);color:#fff}
+
+/* ---------- Visual: editor + terminal ---------- */
+.devflow-visual{position:relative;padding:0 0 50px}
+.dv-window{background:#0f2340;border-radius:12px;box-shadow:0 30px 70px #12305a33;overflow:hidden;border:1px solid #1d3a63}
+.dv-bar{display:flex;align-items:center;gap:14px;padding:12px 15px;background:#0c1d36;border-bottom:1px solid #1b3559}
+.dv-dots{display:flex;gap:6px}
+.dv-dots i{width:9px;height:9px;border-radius:50%;background:#2f4a73}
+.dv-dots i:nth-child(1){background:#e07a6b}.dv-dots i:nth-child(2){background:#e3bd66}.dv-dots i:nth-child(3){background:#6fc79a}
+.dv-tab{font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#c8d8f0;background:#16335a;padding:6px 10px;border-radius:5px}
+.dv-live{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:9px;letter-spacing:.06em;color:#8fa6c7;text-transform:uppercase}
+.dv-live .status-dot{box-shadow:0 0 0 3px #1c4a42}
+.dv-code{padding:18px 8px 36px 0;font:500 12px/1.95 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#dbe6f5;counter-reset:dvline;min-height:252px;position:relative}
+.dv-line{display:flex;align-items:center;min-height:23px;counter-increment:dvline;white-space:pre}
+.dv-line::before{content:counter(dvline);flex:none;width:38px;text-align:right;padding-right:16px;color:#4f6a93;font-size:10px}
+.ln{display:inline-block;overflow:hidden;white-space:pre;vertical-align:bottom;width:calc(var(--n,1) * 1ch);border-right:2px solid transparent;box-sizing:content-box}
+.ln .k{color:#8db5ff}.ln .s{color:#86d9b4}.ln .c{color:#6a7f9f;font-style:italic}.ln .p{color:#f1c98d}
+.dv-caret{display:inline-block;width:2px;height:15px;background:#8db5ff;margin-left:2px;opacity:0;flex:none}
+
+.dv-terminal{position:relative;z-index:2;margin:-26px 0 0 auto;width:86%;background:#fff;border:1px solid #e3e9f2;border-radius:10px;box-shadow:0 22px 50px #17345b20;padding:16px 18px 14px;font:600 11px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.dv-term-line{display:flex;align-items:center;gap:8px;padding:3px 0;color:#41546f}
+.dv-prompt{color:#2f66c8}
+.dv-ok{color:#2c7a58}
+.dv-ok .icon{width:13px;height:13px;flex:none;color:#38a883}
+.dv-pipeline{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:13px;padding-top:13px;border-top:1px solid #edf1f6}
+.dv-stage{font:700 9px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:9px 4px;border-radius:5px;border:1px solid #dfe6f0;background:#fff;color:#6b7d96}
+
+.dv-chip{position:absolute;z-index:3;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #e6ecf5;border-radius:8px;box-shadow:0 12px 30px #18345318;padding:9px 12px;font-size:10px;font-weight:700;color:#30435d}
+.dv-chip svg{color:#4377d3;flex:none}
+.dv-chip-a{right:-14px;top:-18px}
+.dv-chip-b{left:4%;bottom:0}
+.dv-chip .chip-check{width:21px;height:21px;font-size:10px}
+
+/* ---------- Motion (only when the page animation is on) ---------- */
+/* Editor: hidden lines until the section scrolls into view, then they type out */
+main.motion-on .devflow-visual:not(.in) .ln{width:0}
+main.motion-on .devflow-visual.in .ln{
+  width:0;
+  animation:
+    dv-type var(--dur,600ms) steps(var(--n,1),end) var(--t,0ms) forwards,
+    dv-caret var(--dur,600ms) steps(1,end) var(--t,0ms) forwards}
+main.motion-on .devflow-visual.in .dv-caret{animation:dv-blink 1s steps(1,end) var(--t,0ms) infinite}
+@keyframes dv-type{from{width:0}to{width:calc(var(--n,1) * 1ch)}}
+@keyframes dv-caret{0%{border-right-color:#8db5ff}99%{border-right-color:#8db5ff}100%{border-right-color:transparent}}
+@keyframes dv-blink{0%{opacity:1}50%{opacity:0}100%{opacity:1}}
+
+/* Terminal lines appear one after another */
+main.motion-on .devflow-visual:not(.in) .dv-term-line{opacity:0}
+main.motion-on .devflow-visual.in .dv-term-line{animation:dv-line-in .45s cubic-bezier(.22,.8,.24,1) var(--t,0ms) both}
+@keyframes dv-line-in{from{opacity:0;translate:0 7px}to{opacity:1;translate:0 0}}
+
+/* Pipeline: stages light up in turn, forever, while the section is on screen */
+main.motion-on .devflow-visual.in .dv-stage{animation:dv-stage 8s ease-in-out infinite;animation-delay:calc(5.4s + var(--k,0) * 2s)}
+@keyframes dv-stage{
+  0%{background:#fff;color:#6b7d96;border-color:#dfe6f0}
+  4%,22%{background:#2563eb;color:#fff;border-color:#2563eb}
+  28%,100%{background:#fff;color:#6b7d96;border-color:#dfe6f0}}
+
+/* Floating chips */
+main.motion-on .dv-chip{animation:hm-float 6.5s ease-in-out infinite}
+main.motion-on .dv-chip-b{animation-duration:7.5s;animation-delay:-2.5s}
+main.motion-on .devflow-visual:not(.in) .dv-chip{opacity:0}
+main.motion-on .dv-chip{transition:opacity .8s ease 1s}
+
+/* ---------- Responsive ---------- */
+@media(max-width:980px){
+  .devflow-inner{grid-template-columns:1fr;gap:46px;padding-top:70px;padding-bottom:70px}
+  .devflow-lead{max-width:620px}
+}
+@media(max-width:700px){
+  .hero-token{display:none}
+  .dv-code{font-size:10.5px;min-height:210px}
+  .dv-line::before{width:30px;padding-right:12px}
+  .dv-terminal{width:94%;padding:14px}
+  .dv-chip-a{right:-4px;top:-16px}
+  .dv-chip-b{display:none}
+}
+@media(max-width:380px){.dv-code{font-size:9.5px}.dv-live{display:none}}
+
+/* =====================================================================
+   WORD HOVER ZOOM  (site-wide; the words are wrapped by word_hover.ts)
+   ===================================================================== */
+hw-g{display:inline}
+hw-s{display:none!important}
+hw-w{display:inline-block;text-decoration:inherit;transform-origin:50% 62%;
+  transition:scale .22s cubic-bezier(.22,.8,.24,1)}
+/* Headings are split into words by home_motion.ts; give those words the same zoom */
+h1 .w,h2 .w{transform-origin:50% 62%;transition:scale .22s cubic-bezier(.22,.8,.24,1)}
+@media (hover:hover) and (pointer:fine){
+  hw-w:hover{scale:1.1}
+  h1 .w:hover,h2 .w:hover{scale:1.07}
+}

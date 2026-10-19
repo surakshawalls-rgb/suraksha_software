@@ -41,6 +41,7 @@
               <div class="activity-card"><span>WORKFLOW ACTIVITY</span><i><b></b></i><i><b></b></i><i><b></b></i></div>
             </div></div>
           </div>
+          <span class="hero-token token-a" aria-hidden="true">&#123; &#125;</span><span class="hero-token token-b" aria-hidden="true">API</span><span class="hero-token token-c" aria-hidden="true">git</span><span class="hero-token token-d" aria-hidden="true">&lt;/&gt;</span>
           <div class="visual-chip chip-top"><span class="chip-icon"><svg lucideCode class="icon"></svg></span><span>Purpose-built software<small>Designed around your workflow</small></span></div>
           <div class="visual-chip chip-bottom"><span class="chip-check">✓</span><span>Built for what’s next<small>Useful today. Ready to grow.</small></span></div>
         </div>
@@ -48,6 +49,43 @@
       <section class="credibility-strip"><div><b>Business-first</b><span>Solutions grounded in real workflows</span></div><div><b>Built to maintain</b><span>Clear, considered engineering</span></div><div><b>People in the loop</b><span>Transparent collaboration throughout</span></div><div><b>Skills for tomorrow</b><span>Practical, project-led learning</span></div></section>
       <section class="section-wrap section-pad"><div class="section-heading"><div><p class="eyebrow">WHAT WE DO</p><h2>Technology that moves<br><em>your business forward.</em></h2></div><a class="text-link" routerLink="/services">Explore all services <svg lucideArrowRight class="icon"></svg></a></div>
         <div class="service-grid">@for (service of services; track service.slug) {<a class="service-card" [routerLink]="'/services/' + service.slug"><span class="service-index"><app-service-icon [name]="service.icon"></app-service-icon></span><h3>{{service.title}}</h3><p>{{service.short}}</p><span class="card-arrow"><svg lucideArrowRight class="icon"></svg></span></a>}</div>
+      </section>
+      <section class="devflow">
+        <div class="section-wrap devflow-inner">
+          <div class="devflow-copy">
+            <p class="eyebrow">BUILT LIKE REAL SOFTWARE</p>
+            <h2>Code with care.<br><em>Launch with confidence.</em></h2>
+            <p class="devflow-lead">Every build moves through readable code, review and testing before it reaches your users, so what we ship is easier to trust, maintain and improve.</p>
+            <div class="devflow-points">
+              <div><span class="dv-icon"><svg lucideCode class="icon"></svg></span><div><b>Readable, maintainable code</b><p>Clear structure your team can understand and extend.</p></div></div>
+              <div><span class="dv-icon"><svg lucideCheck class="icon"></svg></span><div><b>Reviewed and tested</b><p>Quality checks are part of the work, not an afterthought.</p></div></div>
+              <div><span class="dv-icon"><svg lucideLayers class="icon"></svg></span><div><b>Ready for what’s next</b><p>Launch is a milestone, with support options based on agreed scope.</p></div></div>
+            </div>
+          </div>
+          <div class="devflow-visual" role="img" aria-label="Illustration of code being written, tested and launched">
+            <div class="dv-window" aria-hidden="true">
+              <div class="dv-bar"><span class="dv-dots"><i></i><i></i><i></i></span><span class="dv-tab">launch.ts</span><span class="dv-live"><span class="status-dot"></span>live preview</span></div>
+              <div class="dv-code">
+            <div class="dv-line"><span class="ln" style="--n:22;--t:500ms;--dur:352ms"><span class="c">// from idea to launch</span></span></div>
+            <div class="dv-line"><span class="ln" style="--n:17;--t:922ms;--dur:272ms"><span class="k">const</span> project = &#123;</span></div>
+            <div class="dv-line"><span class="ln" style="--n:31;--t:1264ms;--dur:496ms">  <span class="p">goal</span>: <span class="s">"solve a real problem"</span>,</span></div>
+            <div class="dv-line"><span class="ln" style="--n:35;--t:1830ms;--dur:560ms">  <span class="p">stack</span>: [<span class="s">"Angular"</span>, <span class="s">"TypeScript"</span>],</span></div>
+            <div class="dv-line"><span class="ln" style="--n:30;--t:2460ms;--dur:480ms">  <span class="p">quality</span>: [<span class="s">"review"</span>, <span class="s">"test"</span>],</span></div>
+            <div class="dv-line"><span class="ln" style="--n:2;--t:3010ms;--dur:32ms">&#125;;</span></div>
+            <div class="dv-line"><span class="ln" style="--n:0;--t:3112ms;--dur:0ms"></span></div>
+            <div class="dv-line"><span class="ln" style="--n:27;--t:3112ms;--dur:432ms"><span class="k">export function</span> launch(p) &#123;</span></div>
+            <div class="dv-line"><span class="ln" style="--n:30;--t:3614ms;--dur:480ms">  <span class="k">return</span> deliver(p).support();</span></div>
+            <div class="dv-line"><span class="ln" style="--n:1;--t:4164ms;--dur:16ms">&#125;</span><span class="dv-caret" style="--t:4250ms"></span></div>
+              </div>
+            </div>
+            <div class="dv-terminal" aria-hidden="true">
+              <div class="dv-term-line dv-cmd" style="--t:4400ms"><span class="dv-prompt">$</span> npm run build</div><div class="dv-term-line dv-ok" style="--t:4820ms"><svg lucideCheck class="icon"></svg>Compiled successfully</div><div class="dv-term-line dv-ok" style="--t:5240ms"><svg lucideCheck class="icon"></svg>All tests passed</div><div class="dv-term-line dv-ok" style="--t:5660ms"><svg lucideCheck class="icon"></svg>Ready to launch</div>
+              <div class="dv-pipeline"><span class="dv-stage" style="--k:0">Plan</span><span class="dv-stage" style="--k:1">Build</span><span class="dv-stage" style="--k:2">Test</span><span class="dv-stage" style="--k:3">Launch</span></div>
+            </div>
+            <div class="dv-chip dv-chip-a" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="5" r="2.2"/><circle cx="6" cy="19" r="2.2"/><circle cx="18" cy="9" r="2.2"/><path d="M6 7.2v9.6M18 11.2c0 4-6 3-11 6.2"/></svg>feature/new-flow</div>
+            <div class="dv-chip dv-chip-b" aria-hidden="true"><span class="chip-check">✓</span>Reviewed &amp; tested</div>
+          </div>
+        </div>
       </section>
       <section class="dark-band"><div class="section-wrap split-feature"><div><p class="eyebrow eyebrow-light">A PRACTICAL APPROACH</p><h2>Good software starts with<br><em>understanding the work.</em></h2><p class="light-copy">We listen before we build. By learning your goals, constraints and everyday workflows, we can shape digital solutions around the people who use them.</p><a class="button button-white" routerLink="/process">See how we work <svg lucideArrowRight class="icon"></svg></a></div><div class="principles">@for (point of ['Business-first execution','Clean, maintainable engineering','Transparent collaboration','Quality-focused delivery','Continuous improvement']; track point) {<div><span>✓</span>{{point}}</div>}</div></div></section>
       <section class="section-wrap section-pad"><div class="section-heading"><div><p class="eyebrow">INTERNAL PRODUCTS</p><h2>Real work. <em>Real workflows.</em></h2></div><a class="text-link" routerLink="/portfolio">Explore our work <svg lucideArrowRight class="icon"></svg></a></div><div class="portfolio-grid">@for (project of portfolio; track project.name) {<article class="portfolio-card"><div class="project-art"><span class="project-mark">{{project.name.slice(0,1)}}</span><span class="project-status">{{project.status}}</span><div class="project-lines"><i></i><i></i><i></i></div></div><div class="project-info"><p class="eyebrow">{{project.type}}</p><h3>{{project.name}}</h3><p>{{project.description}}</p></div></article>}</div><p class="disclaimer">These are internal products and business projects, not client endorsements. Status and capabilities are described conservatively.</p></section>

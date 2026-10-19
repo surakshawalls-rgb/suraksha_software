@@ -31,10 +31,8 @@ export const COURSES: Course[] = [
 ];
 
 export const PORTFOLIO = [
-  { name: 'Attendance and Wage Management', type: 'Internal business application', status: 'Release status to be confirmed', description: 'An internal operations application with employee, partner finance and communication areas visible in the source project.', verified: ['Employee and people workflows', 'Partner finance interface', 'Conversations, chat and calling routes'], stack: ['Angular'] },
-  { name: 'Library Management', type: 'Internal business application', status: 'Release status to be confirmed', description: 'A library operations application with distinct staff, administration and public resource routes.', verified: ['Library student and expense modules', 'Registration requests and complaint workflows', 'Public digital-library resources'], stack: ['Angular', 'Supabase (project dependency)'] },
   { name: 'Soft Steps Carpets', type: 'Internal business website', status: 'Release status to be confirmed', description: 'A product-focused carpet and rug website with catalogue, collections and enquiry-led shopping routes.', verified: ['Product and category pages', 'Collections and shop', 'Contact and project enquiries'], stack: ['Angular', 'Supabase (project dependency)'] },
-  { name: 'Fencing Quotation Calculator', type: 'Internal business tool', status: 'Release status to be confirmed', description: 'A calculation service for estimating fencing materials and related cost components.', verified: ['Perimeter and pillar calculations', 'Wire-weight and cost calculations', 'Optional installation cost calculation'], stack: ['Angular', 'TypeScript'] }
+  { name: 'Madad QR', type: 'Vehicle safety product', status: 'Release status to be confirmed', description: 'A QR safety tag that sticks onto a vehicle\u2019s mirror. If the owner or driver is ever in an emergency, people nearby can use it to get the right help quickly.', verified: ['Mirror-mounted QR safety tag', 'Built for emergency situations involving the owner or driver', 'Quick to scan for anyone nearby'], stack: ['QR code'] }
 ];
 
 export const PROCESS = [
