@@ -30,9 +30,48 @@ export const COURSES: Course[] = [
   { slug: 'react-frontend-frameworks', title: 'React and Frontend Frameworks', summary: 'Build component-based interfaces and explore common React application patterns.', category: 'Frontend', modules: ['React fundamentals', 'Components and props', 'Hooks and state', 'Context API', 'Redux fundamentals', 'Next.js and API integration'], projects: ['Component-based interactive application', 'API-connected frontend experience'], outcomes: ['Compose reusable React components', 'Manage application state', 'Connect an interface to APIs'], audience: 'Learners with basic JavaScript knowledge who want to explore React.', prerequisites: 'JavaScript fundamentals are recommended.', career: 'React Developer / Frontend Engineer', technologies: ['React', 'Hooks', 'Context API', 'Redux', 'Next.js'] }
 ];
 
-export const PORTFOLIO = [
-  { name: 'Soft Steps Carpets', type: 'Internal business website', status: 'Release status to be confirmed', description: 'A product-focused carpet and rug website with catalogue, collections and enquiry-led shopping routes.', verified: ['Product and category pages', 'Collections and shop', 'Contact and project enquiries'], stack: ['Angular', 'Supabase (project dependency)'] },
-  { name: 'Madad QR', type: 'Vehicle safety product', status: 'Release status to be confirmed', description: 'A QR safety tag that sticks onto a vehicle\u2019s mirror. If the owner or driver is ever in an emergency, people nearby can use it to get the right help quickly.', verified: ['Mirror-mounted QR safety tag', 'Built for emergency situations involving the owner or driver', 'Quick to scan for anyone nearby'], stack: ['QR code'] }
+export type CaseStudy = {
+  slug: string;
+  client: string;
+  category: string;
+  title: string;
+  summary: string;
+  kind: 'carpet' | 'qr' | 'building';
+  scope: string[];
+  stack: string[];
+};
+
+export const CASE_STUDIES: CaseStudy[] = [
+  {
+    slug: 'soft-steps-carpets',
+    client: 'Soft Steps Carpets',
+    category: 'Business website',
+    title: 'A product-focused carpet and rug website',
+    summary: 'A catalogue-led website for carpets and rugs, with collections, a shop and enquiry-led shopping routes.',
+    kind: 'carpet',
+    scope: ['Product and category pages', 'Collections and shop', 'Contact and project enquiries'],
+    stack: ['Angular', 'Supabase (project dependency)']
+  },
+  {
+    slug: 'madad-qr',
+    client: 'Madad QR',
+    category: 'Vehicle safety product',
+    title: 'A QR safety tag for vehicles, made for emergencies',
+    summary: 'A QR safety tag that sticks onto a vehicle\u2019s mirror. If the owner or driver is ever in an emergency, people nearby can use it to get the right help quickly.',
+    kind: 'qr',
+    scope: ['Mirror-mounted QR safety tag', 'Built for emergency situations involving the owner or driver', 'Quick to scan for anyone nearby'],
+    stack: ['QR code']
+  },
+  {
+    slug: 'shrinathji-developers',
+    client: 'Shrinathji Developers',
+    category: 'Case study coming soon',
+    title: 'A digital project for Shrinathji Developers',
+    summary: 'The full case study for this project is being prepared and will be added soon.',
+    kind: 'building',
+    scope: [],
+    stack: []
+  }
 ];
 
 export const PROCESS = [

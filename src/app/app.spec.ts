@@ -1,4 +1,4 @@
-import { COURSES, SERVICES } from './content';
+import { CASE_STUDIES, COURSES, SERVICES } from './content';
 import { routes } from './app.routes';
 import { EnquiryService } from './enquiry.service';
 
@@ -11,8 +11,14 @@ describe('Suraksha Software site content', () => {
     }
   });
 
+  it('registers a route for every case study', () => {
+    for (const study of CASE_STUDIES) {
+      expect(routes.some(route => route.path === `case-studies/${study.slug}`)).toBe(true);
+    }
+  });
+
   it('registers all required pages and a not-found route', () => {
-    for (const path of ['', 'services', 'portfolio', 'about', 'process', 'technology',
+    for (const path of ['', 'services', 'case-studies', 'about', 'process', 'technology',
       'training', 'contact', 'privacy-policy', 'terms-and-conditions']) {
       expect(routes.some(route => route.path === path)).toBe(true);
     }

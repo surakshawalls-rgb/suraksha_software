@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit, computed, effect, inject, signal } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
 import { LucideArrowRight as ArrowRight, LucideCheck as Check, LucideChevronDown as ChevronDown, LucideCode as Code2, LucideLayers as Layers3, LucideMenu as Menu, LucideX as X } from '@lucide/angular';
-import { COURSES, FAQS, PORTFOLIO, PROCESS, SERVICES, TECHNOLOGIES, Course, Service } from './content';
+import { CASE_STUDIES, COURSES, FAQS, PROCESS, SERVICES, TECHNOLOGIES, CaseStudy, Course, Service } from './content';
 import { EnquiryService, EnquiryPayload } from './enquiry.service';
 import { ServiceIconComponent } from './service-icon.component';
 import { initHomeMotion } from './home_motion';
@@ -11,7 +12,7 @@ import { initWordHover } from './word_hover';
 
 @Component({
   selector: 'app-page',
-  imports: [RouterLink, RouterLinkActive, FormsModule, ArrowRight, Check, ChevronDown, Code2, Layers3, Menu, X, ServiceIconComponent],
+  imports: [RouterLink, RouterLinkActive, FormsModule, NgTemplateOutlet, ArrowRight, Check, ChevronDown, Code2, Layers3, Menu, X, ServiceIconComponent],
   templateUrl: './app.html',
 })
 export class PageComponent implements OnInit, OnDestroy {
@@ -28,7 +29,7 @@ export class PageComponent implements OnInit, OnDestroy {
   readonly showProjectFields = computed(() => this.form.enquiry_type !== 'Training and courses');
   readonly services = SERVICES;
   readonly courses = COURSES;
-  readonly portfolio = PORTFOLIO;
+  readonly caseStudies = CASE_STUDIES;
   readonly process = PROCESS;
   readonly technologies = TECHNOLOGIES;
   readonly faqs = FAQS;
@@ -44,7 +45,7 @@ export class PageComponent implements OnInit, OnDestroy {
     if (path === '/') return 'home';
     if (path === '/services') return 'services';
     if (path === '/training') return 'training';
-    if (path === '/portfolio') return 'portfolio';
+    if (path === '/case-studies') return 'case-studies';
     if (path === '/about') return 'about';
     if (path === '/process') return 'process';
     if (path === '/technology') return 'technology';
@@ -53,17 +54,19 @@ export class PageComponent implements OnInit, OnDestroy {
     if (path === '/terms-and-conditions') return 'terms';
     if (path.startsWith('/services/')) return 'service-detail';
     if (path.startsWith('/training/')) return 'course-detail';
+    if (path.startsWith('/case-studies/')) return 'case-study-detail';
     return 'not-found';
   });
   readonly pageTitle = computed(() => {
     const path = this.currentPath();
     const service = SERVICES.find(item => `/services/${item.slug}` === path);
     const course = COURSES.find(item => `/training/${item.slug}` === path);
-    return service?.title ?? course?.title ?? ({
+    const study = CASE_STUDIES.find(item => `/case-studies/${item.slug}` === path);
+    return service?.title ?? course?.title ?? study?.client ?? ({
       '/': 'Digital solutions, engineered for business',
       '/services': 'Software development services',
       '/training': 'Practical technical training',
-      '/portfolio': 'Our work',
+      '/case-studies': 'Case studies',
       '/about': 'Business-first engineering',
       '/process': 'A thoughtful process, built around you',
       '/technology': 'Technology capabilities',
@@ -73,6 +76,7 @@ export class PageComponent implements OnInit, OnDestroy {
     } as Record<string, string>)[path] ?? 'Page not found';
   });
   readonly selectedService = computed(() => SERVICES.find(item => `/services/${item.slug}` === this.currentPath()));
+  readonly selectedCaseStudy = computed<CaseStudy | undefined>(() => CASE_STUDIES.find(item => `/case-studies/${item.slug}` === this.currentPath()));
   readonly selectedCourse = computed(() => COURSES.find(item => `/training/${item.slug}` === this.currentPath()));
 
   constructor() {
@@ -85,6 +89,7 @@ export class PageComponent implements OnInit, OnDestroy {
       this.pageKind();
       this.selectedService();
       this.selectedCourse();
+      this.selectedCaseStudy();
       let stop: (() => void) | undefined;
       const timer = window.setTimeout(() => {
         stop = initHomeMotion();

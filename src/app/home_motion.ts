@@ -23,7 +23,10 @@ const GROUPS: Group[] = [
   { box: '.principles', items: ':scope > div', variant: 'right', base: 100, step: 95 },
   { box: '.training-band .split-feature > div:first-child', items: '.eyebrow, .light-copy, .button', variant: 'blur-up', base: 40, step: 95 },
   { box: '.course-mini-grid', items: ':scope > a', variant: 'scale', base: 90, step: 85 },
-  { box: '.portfolio-grid', items: ':scope > .portfolio-card', variant: 'up', base: 40, step: 90 },
+  { box: '.case-cards', items: ':scope > .case-card', variant: 'up', base: 40, step: 110 },
+  { box: '.case-row', items: ':scope > .cs-visual', variant: 'scale', base: 60, step: 0 },
+  { box: '.case-row .case-copy', items: ':scope > *', variant: 'blur-up', base: 100, step: 80 },
+  { box: '.cs-visual-hero', items: ':scope', variant: 'scale', base: 40, step: 0 },
   { box: '.portfolio-card .project-info', items: '.eyebrow, h3, p, h4, ul > li, .tech-tags > span', variant: 'blur-up', base: 80, step: 45 },
   { box: '.process-row', items: ':scope > .process-step', variant: 'step', base: 40, step: 110 },
   { box: '.process-list', items: ':scope > article', variant: 'step', base: 40, step: 95 },
@@ -246,10 +249,15 @@ export function initHomeMotion(): () => void {
 
   return () => {
     cleanups.forEach(cleanup => cleanup());
+    splitUndo.forEach(undo => undo());
+    splitUndo.length = 0;
     main.classList.remove('motion-on');
     footer?.classList.remove('motion-on');
   };
 }
+
+/** Steps that put split headings back exactly as Angular rendered them. */
+const splitUndo: Array<() => void> = [];
 
 function splitHeadline(heading: HTMLElement | null, baseDelay = 120, wordStep = 50): number {
   if (!heading) return 0;
@@ -258,7 +266,12 @@ function splitHeadline(heading: HTMLElement | null, baseDelay = 120, wordStep = 
 
   const copy = heading.cloneNode(true) as HTMLElement;
   copy.querySelectorAll('br').forEach(lineBreak => lineBreak.replaceWith(' '));
+  const previousLabel = heading.getAttribute('aria-label');
   heading.setAttribute('aria-label', (copy.textContent ?? '').replace(/\s+/g, ' ').trim());
+  splitUndo.push(() => {
+    if (previousLabel === null) heading.removeAttribute('aria-label');
+    else heading.setAttribute('aria-label', previousLabel);
+  });
   let count = 0;
 
   const wrap = (node: Node): void => {
@@ -279,7 +292,14 @@ function splitHeadline(heading: HTMLElement | null, baseDelay = 120, wordStep = 
         fragment.appendChild(outer);
         count++;
       }
+      const added = Array.from(fragment.childNodes);
       node.parentNode?.replaceChild(fragment, node);
+      // Keep the ORIGINAL text node so Angular bindings like {{title}} keep working.
+      splitUndo.push(() => {
+        const first = added[0];
+        if (first?.parentNode) first.parentNode.insertBefore(node, first);
+        added.forEach(piece => piece.parentNode?.removeChild(piece));
+      });
     } else if (node.nodeType === Node.ELEMENT_NODE) {
       Array.from(node.childNodes).forEach(wrap);
     }

@@ -3,7 +3,7 @@
   <nav class="desktop-nav" aria-label="Main navigation">
     <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
     <a routerLink="/services" routerLinkActive="active">Services</a>
-    <a routerLink="/portfolio" routerLinkActive="active">Our work</a>
+    <a routerLink="/case-studies" routerLinkActive="active">Case studies</a>
     <a routerLink="/about" routerLinkActive="active">About</a>
     <a routerLink="/process" routerLinkActive="active">Process</a>
     <a routerLink="/training" routerLinkActive="active">Training</a>
@@ -16,7 +16,7 @@
 @if (menuOpen()) {
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <a routerLink="/" (click)="menuOpen.set(false)">Home</a><a routerLink="/services" (click)="menuOpen.set(false)">Services</a>
-    <a routerLink="/portfolio" (click)="menuOpen.set(false)">Our work</a><a routerLink="/about" (click)="menuOpen.set(false)">About</a>
+    <a routerLink="/case-studies" (click)="menuOpen.set(false)">Case studies</a><a routerLink="/about" (click)="menuOpen.set(false)">About</a>
     <a routerLink="/process" (click)="menuOpen.set(false)">Process</a><a routerLink="/technology" (click)="menuOpen.set(false)">Technology</a>
     <a routerLink="/training" (click)="menuOpen.set(false)">Training institute</a><a routerLink="/contact" (click)="menuOpen.set(false)">Contact</a>
   </nav>
@@ -24,32 +24,94 @@
 <main>
   @switch (pageKind()) {
     @case ('home') {
-      <section class="hero section-wrap">
-        <div class="hero-copy"><p class="eyebrow"><span class="eyebrow-line"></span> DIGITAL INNOVATION PARTNER FOR AMBITIOUS BUSINESSES</p>
-          <h1>Building Digital<br>Solutions<br><em>designed for<br>what’s next.</em></h1>
-          <p class="lead">From websites and custom software to mobile applications and intelligent digital solutions — we turn ambitious ideas into powerful technology that helps businesses innovate, scale, and grow.</p>
-          <div class="hero-actions"><a class="button" routerLink="/contact">Discuss your project <svg lucideArrowRight class="icon"></svg></a><a class="button button-light" routerLink="/services">Explore our services</a></div>
-          <div class="hero-note"><span class="status-dot"></span> Thoughtful engineering. Clear collaboration.</div>
-        </div>
-        <div class="hero-visual" aria-label="Illustration of a business software dashboard">
-          <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
-          <div class="dashboard">
-            <div class="dash-top"><div class="dash-brand"><span></span><span></span><span></span></div><div class="dash-avatar">SS</div></div>
-            <div class="dash-content"><div class="dash-side"><i></i><i></i><i></i><i></i><i></i></div><div class="dash-main">
-              <span class="dash-label">BUSINESS OVERVIEW</span><strong>Work, made clearer.</strong>
-              <div class="metric-row"><div class="metric-card"><small>Projects</small><b>In focus</b><span class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div><div class="metric-card"><small>Operations</small><b>Connected</b><span class="metric-ring"></span></div></div>
-              <div class="activity-card"><span>WORKFLOW ACTIVITY</span><i><b></b></i><i><b></b></i><i><b></b></i></div>
-            </div></div>
+      <!-- ============ HOME (Shopify-style layout, Suraksha Software content) ============ -->
+      <section class="sh-hero">
+        <div class="sh-wrap sh-hero-grid">
+          <div class="sh-hero-copy">
+            <p class="sh-pill"><span class="status-dot"></span> Software development &amp; technical training</p>
+            <h1>
+              <span class="sh-sr">Build the next digital product your business relies on.</span>
+              <span aria-hidden="true">Build the next<br><span class="sh-rot"><span class="sh-rot-list"><span>website</span><span>mobile app</span><span>business system</span><span>online store</span><span>big idea</span><span>website</span></span></span></span>
+            </h1>
+            <p class="sh-lead">Dream big and build steadily with Suraksha Software. We design and develop websites, custom software and mobile apps, and teach the skills behind them.</p>
+            <div class="sh-actions"><a class="sh-btn sh-btn-primary" routerLink="/contact">Start your project <svg lucideArrowRight class="icon"></svg></a><a class="sh-btn sh-btn-ghost" routerLink="/services">Explore services</a></div>
+            <p class="sh-fine">Share your requirements and we will discuss scope, timeline and cost together.</p>
           </div>
-          <span class="hero-token token-a" aria-hidden="true">&#123; &#125;</span><span class="hero-token token-b" aria-hidden="true">API</span><span class="hero-token token-c" aria-hidden="true">git</span><span class="hero-token token-d" aria-hidden="true">&lt;/&gt;</span>
-          <div class="visual-chip chip-top"><span class="chip-icon"><svg lucideCode class="icon"></svg></span><span>Purpose-built software<small>Designed around your workflow</small></span></div>
-          <div class="visual-chip chip-bottom"><span class="chip-check">✓</span><span>Built for what’s next<small>Useful today. Ready to grow.</small></span></div>
+          <div class="sh-hero-visual" aria-hidden="true">
+            <div class="sh-browser">
+              <div class="sh-bar"><i></i><i></i><i></i><span>yourbusiness.in</span></div>
+              <div class="sh-screen">
+                <div class="sh-s-nav"><b></b><u></u><u></u><u></u><em></em></div>
+                <div class="sh-s-banner"><small>BUILT AROUND YOUR WORKFLOW</small><strong>Your next chapter, live.</strong><span></span></div>
+                <div class="sh-s-tiles"><i></i><i></i><i></i></div>
+                <div class="sh-s-lines"><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="sh-float sh-float-a"><span class="chip-check">✓</span><span>Website live<small>Fast, responsive, accessible</small></span></div>
+            <div class="sh-float sh-float-b"><span class="sh-dot"></span><span>New enquiry<small>Reviewed in business hours</small></span></div>
+            <div class="sh-float sh-float-c"><span class="sh-code">&lt;/&gt;</span><span>Clean code<small>Reviewed and tested</small></span></div>
+          </div>
+        </div>
+        <div class="sh-wrap sh-hero-foot"><p>One team for what you sell, what you run and what you learn.</p><div class="sh-hero-tags"><span>Websites</span><span>Custom software</span><span>Mobile apps</span><span>E-commerce</span><span>SEO &amp; SMO</span><span>Training</span></div></div>
+      </section>
+
+      <section class="sh-section sh-reveal">
+        <div class="sh-wrap">
+          <div class="sh-head sh-head-center"><p class="sh-eyebrow">WHAT WE BUILD</p><h2>Show up everywhere your customers are.<br><em>Run everything from one place.</em></h2><p>Websites, software, mobile apps and messaging, planned together and built to work together.</p></div>
+          <div class="sh-trio">
+            <a class="sh-card" routerLink="/services/web-development">
+              <div class="sh-card-art sh-art-web" aria-hidden="true"><div class="sh-w-top"><i></i><i></i><i></i></div><div class="sh-w-hero"></div><div class="sh-w-cols"><i></i><i></i><i></i></div></div>
+              <h3>A website built to do its job</h3><p>Responsive business websites, portals and web applications, shaped around how people actually use them.</p><span class="sh-link">Web applications and portals <svg lucideArrowRight class="icon"></svg></span>
+            </a>
+            <a class="sh-card" routerLink="/services/software-development">
+              <div class="sh-card-art sh-art-hub" aria-hidden="true"><div class="sh-hub"><span>S</span></div><b style="--a:0">Approvals</b><b style="--a:1">Inventory</b><b style="--a:2">Records</b><b style="--a:3">Reports</b><b style="--a:4">Workflows</b><b style="--a:5">Customers</b></div>
+              <h3>Control everything in one place</h3><p>Custom software that replaces scattered spreadsheets and manual steps with one workflow your team can trust.</p><span class="sh-link">Custom software development <svg lucideArrowRight class="icon"></svg></span>
+            </a>
+            <a class="sh-card" routerLink="/services">
+              <div class="sh-card-art sh-art-reach" aria-hidden="true"><div class="sh-phone"><i></i><i></i><i></i></div><span class="sh-r r1">Mobile apps</span><span class="sh-r r2">Search (SEO)</span><span class="sh-r r3">Bulk SMS</span><span class="sh-r r4">Social (SMO)</span></div>
+              <h3>Reach people on every screen</h3><p>Mobile apps, search visibility, social presence and business messaging that carry one consistent message.</p><span class="sh-link">See all eight services <svg lucideArrowRight class="icon"></svg></span>
+            </a>
+          </div>
         </div>
       </section>
-      <section class="credibility-strip"><div><b>Business-first</b><span>Solutions grounded in real workflows</span></div><div><b>Built to maintain</b><span>Clear, considered engineering</span></div><div><b>People in the loop</b><span>Transparent collaboration throughout</span></div><div><b>Skills for tomorrow</b><span>Practical, project-led learning</span></div></section>
-      <section class="section-wrap section-pad"><div class="section-heading"><div><p class="eyebrow">WHAT WE DO</p><h2>Technology that moves<br><em>your business forward.</em></h2></div><a class="text-link" routerLink="/services">Explore all services <svg lucideArrowRight class="icon"></svg></a></div>
-        <div class="service-grid">@for (service of services; track service.slug) {<a class="service-card" [routerLink]="'/services/' + service.slug"><span class="service-index"><app-service-icon [name]="service.icon"></app-service-icon></span><h3>{{service.title}}</h3><p>{{service.short}}</p><span class="card-arrow"><svg lucideArrowRight class="icon"></svg></span></a>}</div>
+
+      <section class="sh-marquee-wrap" aria-label="Our services">
+        <div class="sh-marquee"><div class="sh-track">
+          @for (service of services; track service.slug) {<a [routerLink]="'/services/' + service.slug"><span>{{service.number}}</span>{{service.title}}</a>}
+          @for (service of services; track service.slug) {<a [routerLink]="'/services/' + service.slug" tabindex="-1" aria-hidden="true"><span>{{service.number}}</span>{{service.title}}</a>}
+        </div></div>
       </section>
+
+      <section class="sh-section sh-reveal">
+        <div class="sh-wrap">
+          <div class="sh-head"><p class="sh-eyebrow">CASE STUDIES</p><h2>From a first catalogue<br><em>to a product people rely on.</em></h2></div>
+          <div class="sh-stories">
+            @for (study of caseStudies; track study.slug) {
+              <a class="sh-story" [routerLink]="'/case-studies/' + study.slug">
+                <div class="cs-visual" [attr.data-kind]="study.kind"><ng-container [ngTemplateOutlet]="csArt" [ngTemplateOutletContext]="{ kind: study.kind }"></ng-container></div>
+                <div class="sh-story-body"><span class="sh-tag">{{study.category}}</span><h3>{{study.client}}</h3><p>{{study.summary}}</p><span class="sh-link">See case study <svg lucideArrowRight class="icon"></svg></span></div>
+              </a>
+            }
+          </div>
+          <div class="sh-center"><a class="sh-btn sh-btn-dark" routerLink="/case-studies">View all case studies <svg lucideArrowRight class="icon"></svg></a></div>
+        </div>
+      </section>
+
+      <section class="sh-dark sh-reveal">
+        <div class="sh-wrap sh-split">
+          <div>
+            <p class="sh-eyebrow sh-eyebrow-light">SURAKSHA TRAINING</p>
+            <h2>Meet the skills behind the software.</h2>
+            <p class="sh-dark-copy">Practical, project-led technical training in frontend, Java, Spring, Python, C and C++, Go and more. Learn the craft, build real projects and grow into your next role.</p>
+            <div class="sh-actions"><a class="sh-btn sh-btn-light" routerLink="/training">Explore training <svg lucideArrowRight class="icon"></svg></a></div>
+            <p class="sh-fine sh-fine-light">Fees, durations and batches are shared once confirmed. Training does not guarantee a job or placement.</p>
+          </div>
+          <div class="sh-courses">
+            @for (course of courses; track course.slug) {<a [routerLink]="'/training/' + course.slug"><small>{{course.category}}</small><b>{{course.title}}</b><svg lucideArrowRight class="icon"></svg></a>}
+          </div>
+        </div>
+      </section>
+
       <section class="devflow">
         <div class="section-wrap devflow-inner">
           <div class="devflow-copy">
@@ -87,13 +149,50 @@
           </div>
         </div>
       </section>
-      <section class="dark-band"><div class="section-wrap split-feature"><div><p class="eyebrow eyebrow-light">A PRACTICAL APPROACH</p><h2>Good software starts with<br><em>understanding the work.</em></h2><p class="light-copy">We listen before we build. By learning your goals, constraints and everyday workflows, we can shape digital solutions around the people who use them.</p><a class="button button-white" routerLink="/process">See how we work <svg lucideArrowRight class="icon"></svg></a></div><div class="principles">@for (point of ['Business-first execution','Clean, maintainable engineering','Transparent collaboration','Quality-focused delivery','Continuous improvement']; track point) {<div><span>✓</span>{{point}}</div>}</div></div></section>
-      <section class="section-wrap section-pad"><div class="section-heading"><div><p class="eyebrow">INTERNAL PRODUCTS</p><h2>Real work. <em>Real workflows.</em></h2></div><a class="text-link" routerLink="/portfolio">Explore our work <svg lucideArrowRight class="icon"></svg></a></div><div class="portfolio-grid">@for (project of portfolio; track project.name) {<article class="portfolio-card"><div class="project-art"><span class="project-mark">{{project.name.slice(0,1)}}</span><span class="project-status">{{project.status}}</span><div class="project-lines"><i></i><i></i><i></i></div></div><div class="project-info"><p class="eyebrow">{{project.type}}</p><h3>{{project.name}}</h3><p>{{project.description}}</p></div></article>}</div><p class="disclaimer">These are internal products and business projects, not client endorsements. Status and capabilities are described conservatively.</p></section>
-      <section class="process-band"><div class="section-wrap"><div class="section-heading"><div><p class="eyebrow">FROM FIRST CONVERSATION TO LAUNCH</p><h2>A clear path, <em>at every step.</em></h2></div><a class="text-link" routerLink="/process">Our process <svg lucideArrowRight class="icon"></svg></a></div><div class="process-row">@for (stage of process; track stage[0]; let last = $last) {<div class="process-step"><span>{{stage[0]}}</span><b>{{stage[1]}}</b>@if (!last) {<i></i>}</div>}</div></div></section>
-      <section class="section-wrap section-pad"><div class="section-heading"><div><p class="eyebrow">TECHNICAL CAPABILITIES</p><h2>Choose the right tools<br><em>for the right problem.</em></h2></div><a class="text-link" routerLink="/technology">Explore capabilities <svg lucideArrowRight class="icon"></svg></a></div><div class="technology-row">@for (item of technologies; track item[0]) {<div><span>{{item[0]}}</span><p>{{item[1]}}</p></div>}</div></section>
-      <section class="training-band"><div class="section-wrap split-feature"><div><p class="eyebrow">SAME CURIOSITY. NEW CAREER POSSIBILITIES.</p><h2>Build practical skills.<br><em>Develop real projects.</em></h2><p class="light-copy">Career-oriented technical training focused on programming fundamentals, modern development and hands-on practice.</p><a class="button button-white" routerLink="/training">Explore training <svg lucideArrowRight class="icon"></svg></a></div><div class="course-mini-grid">@for (course of courses.slice(0,4); track course.slug) {<a [routerLink]="'/training/' + course.slug"><span>{{course.category}}</span><b>{{course.title}}</b><svg lucideArrowRight class="icon"></svg></a>}</div></div></section>
-      <section class="section-wrap section-pad faq-section"><div class="section-heading"><div><p class="eyebrow">GOOD QUESTIONS</p><h2>Before we <em>get started.</em></h2></div></div><div class="faq-list">@for (faq of faqs; track faq[0]) {<details><summary>{{faq[0]}} <svg lucideChevronDown class="icon"></svg></summary><p>{{faq[1]}}</p></details>}</div></section>
-      <section class="final-cta"><div class="section-wrap final-cta-inner"><div><p class="eyebrow eyebrow-light">YOUR NEXT CHAPTER STARTS HERE</p><h2>Let’s build your next<br><em>software product together.</em></h2><p>Share your requirements and we’ll discuss the right approach, expected timeline and estimated cost.</p></div><a class="button button-white" routerLink="/contact">Discuss your project <svg lucideArrowRight class="icon"></svg></a></div></section>
+
+      <section class="sh-section sh-reveal">
+        <div class="sh-wrap">
+          <div class="sh-head sh-head-center"><p class="sh-eyebrow">A CLEAR PATH</p><h2>No surprises between<br><em>first idea and launch.</em></h2><p>Every project follows the same visible path, so you always know where things stand.</p></div>
+          <div class="sh-stats">
+            <div><b>{{process.length}}</b><span>stages, from discovery to support</span></div>
+            <div><b>{{services.length}}</b><span>services under one roof</span></div>
+            <div><b>{{courses.length}}</b><span>practical training paths</span></div>
+            <div><b>1</b><span>team, start to finish</span></div>
+          </div>
+          <ol class="sh-stages">
+            @for (stage of process; track stage[0]) {<li><span>{{stage[0]}}</span><b>{{stage[1]}}</b><p>{{stage[2]}}</p></li>}
+          </ol>
+          <div class="sh-center"><a class="sh-btn sh-btn-dark" routerLink="/process">See how we work <svg lucideArrowRight class="icon"></svg></a></div>
+        </div>
+      </section>
+
+      <section class="sh-section sh-soft sh-reveal">
+        <div class="sh-wrap sh-build">
+          <div>
+            <p class="sh-eyebrow">GET GOING</p>
+            <h2>Build fast.<br><em>Build it right.</em></h2>
+            <ol class="sh-steps">
+              <li><span>01</span><div><b>Tell us what you need</b><p>Share your goals, workflow and constraints in a short enquiry.</p></div></li>
+              <li><span>02</span><div><b>We plan and design</b><p>We agree scope, priorities and the shape of the solution together.</p></div></li>
+              <li><span>03</span><div><b>Launch and improve</b><p>We build, test and release, then discuss support within the agreed scope.</p></div></li>
+            </ol>
+            <a class="sh-btn sh-btn-primary" routerLink="/contact">Take your shot <svg lucideArrowRight class="icon"></svg></a>
+          </div>
+          <div class="sh-build-art" aria-hidden="true"><div class="sh-tile t1"></div><div class="sh-tile t2"></div><div class="sh-tile t3"></div><div class="sh-tile t4"></div></div>
+        </div>
+      </section>
+
+      <section class="sh-section sh-reveal">
+        <div class="sh-wrap sh-faq">
+          <div class="sh-head"><p class="sh-eyebrow">GOOD QUESTIONS</p><h2>Before we<br><em>get started.</em></h2></div>
+          <div class="faq-list">@for (faq of faqs; track faq[0]) {<details><summary>{{faq[0]}} <svg lucideChevronDown class="icon"></svg></summary><p>{{faq[1]}}</p></details>}</div>
+        </div>
+      </section>
+
+      <section class="sh-final">
+        <div class="sh-wrap sh-final-inner"><div><h2>Be the next business<br><em>they line up for.</em></h2><p>Tell us what you are building. We will discuss the right approach, timeline and estimated cost.</p></div><div class="sh-actions"><a class="sh-btn sh-btn-light" routerLink="/contact">Start your project <svg lucideArrowRight class="icon"></svg></a><a class="sh-btn sh-btn-outline" routerLink="/training">Ask about training</a></div></div>
+      </section>
+
     }
     @case ('services') {
       <section class="page-hero section-wrap"><p class="eyebrow">SOFTWARE DEVELOPMENT SERVICES</p><h1>Digital solutions, <em>built around your business.</em></h1><p class="lead">From a first website to a connected business system, we help turn practical needs into maintainable digital products.</p></section>
@@ -109,9 +208,19 @@
         <section class="section-wrap section-pad related-links"><p class="eyebrow">RELATED SERVICES</p><div class="related-pills">@for (other of services; track other.slug) { @if (other.slug !== service.slug) {<a [routerLink]="'/services/' + other.slug">{{other.title}} <svg lucideArrowRight class="icon"></svg></a>} }</div></section>
       } @else { <section class="page-hero section-wrap"><h1>Service not found</h1><a routerLink="/services">Browse services</a></section> }
     }
-    @case ('portfolio') {
-      <section class="page-hero section-wrap"><p class="eyebrow">SELECTED INTERNAL WORK</p><h1>Built for the <em>work behind the work.</em></h1><p class="lead">A look at internal business products and tools. These projects are presented as internal work—not client engagements or endorsements.</p></section>
-      <section class="section-wrap section-pad"><div class="portfolio-grid portfolio-grid-page">@for (project of portfolio; track project.name) {<article class="portfolio-card"><div class="project-art"><span class="project-mark">{{project.name.slice(0,1)}}</span><span class="project-status">{{project.status}}</span><div class="project-lines"><i></i><i></i><i></i></div></div><div class="project-info"><p class="eyebrow">{{project.type}} · {{project.status}}</p><h3>{{project.name}}</h3><p>{{project.description}}</p><h4>Verified scope</h4><ul>@for (feature of project.verified; track feature) {<li>{{feature}}</li>}</ul><div class="tech-tags">@for (tech of project.stack; track tech) {<span>{{tech}}</span>}</div></div></article>}</div><p class="disclaimer">No client names, testimonials, performance metrics or outcome claims are included. Public project links and screenshots can be added after approval.</p></section>
+    @case ('case-studies') {
+      <section class="page-hero section-wrap"><p class="eyebrow">CASE STUDIES</p><h1>Products we&rsquo;ve built, <em>case by case.</em></h1><p class="lead">A closer look at selected projects from Suraksha Software.</p></section>
+      <section class="section-wrap case-list">@for (study of caseStudies; track study.slug; let i = $index) {<article class="case-row" [class.flip]="i % 2 === 1"><div class="case-copy"><span class="case-client"><span class="case-mark">{{study.client.slice(0,1)}}</span>{{study.client}}</span><p class="eyebrow">{{study.category}}</p><h3>{{study.title}}</h3><p>{{study.summary}}</p>@if (study.stack.length) {<div class="tech-tags">@for (tech of study.stack; track tech) {<span>{{tech}}</span>}</div>}<a class="text-link" [routerLink]="'/case-studies/' + study.slug">See case study <svg lucideArrowRight class="icon"></svg></a></div><a class="cs-visual" [routerLink]="'/case-studies/' + study.slug" [attr.aria-label]="'Case study: ' + study.client" [attr.data-kind]="study.kind"><ng-container [ngTemplateOutlet]="csArt" [ngTemplateOutletContext]="{ kind: study.kind }"></ng-container></a></article>}</section>
+      <section class="final-cta"><div class="section-wrap final-cta-inner"><div><h2>Have a project in mind?</h2><p>Tell us about your goals and constraints.</p></div><a class="button button-white" routerLink="/contact">Discuss your project <svg lucideArrowRight class="icon"></svg></a></div></section>
+    }
+    @case ('case-study-detail') {
+      @if (selectedCaseStudy(); as study) {
+        <section class="page-hero section-wrap"><a class="breadcrumb" routerLink="/case-studies">Case studies <span>/</span> {{study.client}}</a><p class="eyebrow">{{study.category}}</p><h1>{{study.title}}</h1><p class="lead">{{study.summary}}</p></section>
+        <section class="section-wrap"><div class="cs-visual cs-visual-hero" [attr.data-kind]="study.kind"><ng-container [ngTemplateOutlet]="csArt" [ngTemplateOutletContext]="{ kind: study.kind }"></ng-container></div></section>
+        <section class="section-wrap detail-layout section-pad"><div><p class="eyebrow">THE PROJECT</p><h2>About {{study.client}}.</h2><p class="detail-copy">{{study.summary}}</p>@if (study.scope.length) {<p class="eyebrow space-top">WHAT THE PROJECT COVERS</p>@for (item of study.scope; track item) {<div class="check-row"><svg lucideCheck class="icon"></svg>{{item}}</div>}}</div><aside class="detail-aside"><h3>Project details</h3><div class="check-row"><svg lucideCheck class="icon"></svg>{{study.category}}</div>@if (study.stack.length) {<h3>Technology</h3><div class="tech-tags">@for (tech of study.stack; track tech) {<span>{{tech}}</span>}</div>}</aside></section>
+        <section class="related-links section-wrap section-pad"><p class="eyebrow">MORE CASE STUDIES</p><div class="related-pills">@for (other of caseStudies; track other.slug) { @if (other.slug !== study.slug) {<a [routerLink]="'/case-studies/' + other.slug">{{other.client}} <svg lucideArrowRight class="icon"></svg></a>} }</div></section>
+        <section class="final-cta"><div class="section-wrap final-cta-inner"><div><h2>Have a project in mind?</h2><p>Tell us about your goals and constraints.</p></div><a class="button button-white" routerLink="/contact">Discuss your project <svg lucideArrowRight class="icon"></svg></a></div></section>
+      } @else { <section class="page-hero section-wrap"><h1>Case study not found</h1><a routerLink="/case-studies">Browse case studies</a></section> }
     }
     @case ('about') {
       <section class="page-hero section-wrap"><p class="eyebrow">ABOUT SURAKSHA SOFTWARE</p><h1>Technology should make <em>work better.</em></h1><p class="lead">We design, develop and support digital products that help businesses work smarter, serve customers better and scale with confidence.</p></section>
@@ -167,14 +276,45 @@
       <section class="section-wrap legal-copy section-pad"><h2>Using this website</h2><p>Website content is provided for general information about software development services and technical training. Contact the business to confirm current scope, availability and applicable terms before making decisions.</p><h2>Enquiries and service agreements</h2><p>Submitting an enquiry does not create a client relationship, reserve availability or constitute acceptance of a proposal. Project scope, costs, schedule, ownership, support and other terms must be agreed separately in writing.</p><h2>Training information</h2><p>Course descriptions are indicative learning outlines. Fees, duration and batch schedules are omitted until confirmed. Training is not a guarantee of employment, salary or placement.</p><h2>Third-party services and links</h2><p>This website may rely on third-party infrastructure, including Supabase if configured. Applicable third-party terms and privacy notices should be reviewed. No third-party service is endorsed merely by reference.</p><h2>Accuracy and updates</h2><p>We aim to keep published information useful and accurate, but project details, technologies and availability may change. Confirm relevant details with the business.</p><h2>Company details and legal review</h2><p>Registered entity details, governing law, liability terms and formal contact information are intentionally not stated until confirmed. Have qualified legal counsel review these terms before publication.</p></section>
     }
     @default {
-      <section class="not-found section-wrap"><span>404</span><p class="eyebrow">THIS PAGE ISN’T HERE</p><h1>Let’s find <em>a better path.</em></h1><p>The page may have moved, or the address may be incomplete.</p><div class="hero-actions"><a class="button" routerLink="/">Go home</a><a class="button button-light" routerLink="/services">Services</a><a class="button button-light" routerLink="/portfolio">Our work</a><a class="button button-light" routerLink="/training">Training</a><a class="button button-light" routerLink="/contact">Contact</a></div></section>
+      <section class="not-found section-wrap"><span>404</span><p class="eyebrow">THIS PAGE ISN’T HERE</p><h1>Let’s find <em>a better path.</em></h1><p>The page may have moved, or the address may be incomplete.</p><div class="hero-actions"><a class="button" routerLink="/">Go home</a><a class="button button-light" routerLink="/services">Services</a><a class="button button-light" routerLink="/case-studies">Case studies</a><a class="button button-light" routerLink="/training">Training</a><a class="button button-light" routerLink="/contact">Contact</a></div></section>
     }
   }
 </main>
 <footer class="site-footer">
   <div class="section-wrap footer-grid"><div class="footer-brand"><a class="brand brand-light" routerLink="/"><span class="brand-mark">S<span>.</span></span><span>SURAKSHA<small>SOFTWARE</small></span></a><p>End-to-end digital solutions<br>engineered for business.</p></div>
-    <div><h3>Explore</h3><a routerLink="/services">Services</a><a routerLink="/portfolio">Our work</a><a routerLink="/about">About us</a><a routerLink="/process">Our process</a><a routerLink="/technology">Technology</a></div>
+    <div><h3>Explore</h3><a routerLink="/services">Services</a><a routerLink="/case-studies">Case studies</a><a routerLink="/about">About us</a><a routerLink="/process">Our process</a><a routerLink="/technology">Technology</a></div>
     <div><h3>Training</h3><a routerLink="/training">Training institute</a>@for (course of courses.slice(0,4); track course.slug) {<a [routerLink]="'/training/' + course.slug">{{course.title}}</a>}</div>
     <div><h3>Get in touch</h3><a routerLink="/contact">Discuss a project</a><a routerLink="/contact">Ask about training</a><p class="footer-hours">Support and maintenance options are based on agreed scope and business hours.</p></div>
   </div><div class="section-wrap footer-bottom"><span>© {{year}} Suraksha Software</span><div><a routerLink="/privacy-policy">Privacy policy</a><a routerLink="/terms-and-conditions">Terms and conditions</a></div><span>Details and capabilities confirmed per engagement.</span></div>
 </footer>
+<ng-template #csArt let-kind="kind">
+  @switch (kind) {
+    @case ('carpet') { <svg class="cs-art" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><pattern id="csDiamond" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M11 2 20 11 11 20 2 11Z" fill="none" stroke="#e9c9a6" stroke-width="1.5"/></pattern></defs>
+<rect width="600" height="400" fill="#f4ebe0"/>
+<circle cx="500" cy="70" r="120" fill="#efdcc6" opacity=".6"/>
+<g class="cs-rug"><rect x="110" y="62" width="340" height="276" rx="8" fill="#b4553a"/><rect x="127" y="79" width="306" height="242" rx="4" fill="none" stroke="#f1d9bf" stroke-width="3"/><rect x="141" y="93" width="278" height="214" fill="#9c452e"/><rect x="141" y="93" width="278" height="214" fill="url(#csDiamond)"/><rect x="190" y="136" width="180" height="128" rx="3" fill="#2f4a73"/><path d="M280 146 352 200 280 254 208 200Z" fill="#f1d9bf"/><path d="M280 168 322 200 280 232 238 200Z" fill="#b4553a"/><g stroke="#f1d9bf" stroke-width="2" opacity=".85"><path d="M120 62v-12M140 62v-12M160 62v-12M180 62v-12M200 62v-12M220 62v-12M240 62v-12M260 62v-12M280 62v-12M300 62v-12M320 62v-12M340 62v-12M360 62v-12M380 62v-12M400 62v-12M420 62v-12M440 62v-12M120 338v12M140 338v12M160 338v12M180 338v12M200 338v12M220 338v12M240 338v12M260 338v12M280 338v12M300 338v12M320 338v12M340 338v12M360 338v12M380 338v12M400 338v12M420 338v12M440 338v12"/></g></g>
+<g class="cs-swatches"><g class="cs-swatch"><rect x="474" y="96" width="92" height="64" rx="10" fill="#fff"/><rect x="484" y="106" width="72" height="30" rx="6" fill="#d9a066"/><rect x="484" y="144" width="40" height="6" rx="3" fill="#cdbba5"/></g><g class="cs-swatch"><rect x="474" y="172" width="92" height="64" rx="10" fill="#fff"/><rect x="484" y="182" width="72" height="30" rx="6" fill="#6c8ebf"/><rect x="484" y="220" width="52" height="6" rx="3" fill="#cdbba5"/></g><g class="cs-swatch"><rect x="474" y="248" width="92" height="64" rx="10" fill="#fff"/><rect x="484" y="258" width="72" height="30" rx="6" fill="#8aa88a"/><rect x="484" y="296" width="34" height="6" rx="3" fill="#cdbba5"/></g></g>
+<g class="cs-tag"><rect x="54" y="300" width="168" height="62" rx="12" fill="#fff"/><rect x="70" y="316" width="86" height="8" rx="4" fill="#2f4a73"/><rect x="70" y="334" width="120" height="6" rx="3" fill="#d8cfc3"/></g>
+</svg> }
+    @case ('qr') { <svg class="cs-art" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><linearGradient id="csNavy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0e2038"/><stop offset="1" stop-color="#1b4d96"/></linearGradient><linearGradient id="csScan" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2563eb" stop-opacity="0"/><stop offset="1" stop-color="#5b9bff" stop-opacity=".9"/></linearGradient></defs>
+<rect width="600" height="400" fill="url(#csNavy)"/>
+<g fill="none" stroke="#6fa2ee"><circle class="cs-ring" cx="300" cy="170" r="120" stroke-width="1.5"/><circle class="cs-ring cs-ring-2" cx="300" cy="170" r="120" stroke-width="1.5"/><circle class="cs-ring cs-ring-3" cx="300" cy="170" r="120" stroke-width="1.5"/></g>
+<rect x="196" y="66" width="209" height="209" rx="18" fill="#fff"/>
+<g fill="#10233f"><rect x="216" y="86" width="12" height="12" rx="2"/><rect x="228" y="86" width="12" height="12" rx="2"/><rect x="242" y="86" width="12" height="12" rx="2"/><rect x="254" y="86" width="12" height="12" rx="2"/><rect x="268" y="86" width="12" height="12" rx="2"/><rect x="280" y="86" width="12" height="12" rx="2"/><rect x="294" y="86" width="12" height="12" rx="2"/><rect x="306" y="86" width="12" height="12" rx="2"/><rect x="320" y="86" width="12" height="12" rx="2"/><rect x="332" y="86" width="12" height="12" rx="2"/><rect x="346" y="86" width="12" height="12" rx="2"/><rect x="358" y="86" width="12" height="12" rx="2"/><rect x="372" y="86" width="12" height="12" rx="2"/><rect x="216" y="98" width="12" height="12" rx="2"/><rect x="294" y="98" width="12" height="12" rx="2"/><rect x="372" y="98" width="12" height="12" rx="2"/><rect x="216" y="112" width="12" height="12" rx="2"/><rect x="242" y="112" width="12" height="12" rx="2"/><rect x="254" y="112" width="12" height="12" rx="2"/><rect x="268" y="112" width="12" height="12" rx="2"/><rect x="294" y="112" width="12" height="12" rx="2"/><rect x="320" y="112" width="12" height="12" rx="2"/><rect x="332" y="112" width="12" height="12" rx="2"/><rect x="346" y="112" width="12" height="12" rx="2"/><rect x="372" y="112" width="12" height="12" rx="2"/><rect x="216" y="124" width="12" height="12" rx="2"/><rect x="242" y="124" width="12" height="12" rx="2"/><rect x="254" y="124" width="12" height="12" rx="2"/><rect x="268" y="124" width="12" height="12" rx="2"/><rect x="294" y="124" width="12" height="12" rx="2"/><rect x="320" y="124" width="12" height="12" rx="2"/><rect x="332" y="124" width="12" height="12" rx="2"/><rect x="346" y="124" width="12" height="12" rx="2"/><rect x="372" y="124" width="12" height="12" rx="2"/><rect x="216" y="138" width="12" height="12" rx="2"/><rect x="242" y="138" width="12" height="12" rx="2"/><rect x="254" y="138" width="12" height="12" rx="2"/><rect x="268" y="138" width="12" height="12" rx="2"/><rect x="294" y="138" width="12" height="12" rx="2"/><rect x="320" y="138" width="12" height="12" rx="2"/><rect x="332" y="138" width="12" height="12" rx="2"/><rect x="346" y="138" width="12" height="12" rx="2"/><rect x="372" y="138" width="12" height="12" rx="2"/><rect x="216" y="150" width="12" height="12" rx="2"/><rect x="294" y="150" width="12" height="12" rx="2"/><rect x="372" y="150" width="12" height="12" rx="2"/><rect x="216" y="164" width="12" height="12" rx="2"/><rect x="228" y="164" width="12" height="12" rx="2"/><rect x="242" y="164" width="12" height="12" rx="2"/><rect x="254" y="164" width="12" height="12" rx="2"/><rect x="268" y="164" width="12" height="12" rx="2"/><rect x="280" y="164" width="12" height="12" rx="2"/><rect x="294" y="164" width="12" height="12" rx="2"/><rect x="306" y="164" width="12" height="12" rx="2"/><rect x="320" y="164" width="12" height="12" rx="2"/><rect x="332" y="164" width="12" height="12" rx="2"/><rect x="346" y="164" width="12" height="12" rx="2"/><rect x="358" y="164" width="12" height="12" rx="2"/><rect x="372" y="164" width="12" height="12" rx="2"/><rect x="216" y="176" width="12" height="12" rx="2"/><rect x="294" y="176" width="12" height="12" rx="2"/><rect x="216" y="190" width="12" height="12" rx="2"/><rect x="242" y="190" width="12" height="12" rx="2"/><rect x="254" y="190" width="12" height="12" rx="2"/><rect x="268" y="190" width="12" height="12" rx="2"/><rect x="294" y="190" width="12" height="12" rx="2"/><rect x="320" y="190" width="12" height="12" rx="2"/><rect x="332" y="190" width="12" height="12" rx="2"/><rect x="346" y="190" width="12" height="12" rx="2"/><rect x="216" y="202" width="12" height="12" rx="2"/><rect x="242" y="202" width="12" height="12" rx="2"/><rect x="254" y="202" width="12" height="12" rx="2"/><rect x="268" y="202" width="12" height="12" rx="2"/><rect x="294" y="202" width="12" height="12" rx="2"/><rect x="346" y="202" width="12" height="12" rx="2"/><rect x="372" y="202" width="12" height="12" rx="2"/><rect x="216" y="216" width="12" height="12" rx="2"/><rect x="242" y="216" width="12" height="12" rx="2"/><rect x="254" y="216" width="12" height="12" rx="2"/><rect x="268" y="216" width="12" height="12" rx="2"/><rect x="294" y="216" width="12" height="12" rx="2"/><rect x="332" y="216" width="12" height="12" rx="2"/><rect x="346" y="216" width="12" height="12" rx="2"/><rect x="216" y="228" width="12" height="12" rx="2"/><rect x="294" y="228" width="12" height="12" rx="2"/><rect x="320" y="228" width="12" height="12" rx="2"/><rect x="346" y="228" width="12" height="12" rx="2"/><rect x="358" y="228" width="12" height="12" rx="2"/><rect x="372" y="228" width="12" height="12" rx="2"/><rect x="216" y="242" width="12" height="12" rx="2"/><rect x="228" y="242" width="12" height="12" rx="2"/><rect x="242" y="242" width="12" height="12" rx="2"/><rect x="254" y="242" width="12" height="12" rx="2"/><rect x="268" y="242" width="12" height="12" rx="2"/><rect x="280" y="242" width="12" height="12" rx="2"/><rect x="294" y="242" width="12" height="12" rx="2"/><rect x="346" y="242" width="12" height="12" rx="2"/><rect x="358" y="242" width="12" height="12" rx="2"/><rect x="372" y="242" width="12" height="12" rx="2"/></g>
+<g class="cs-scan"><rect x="204" y="82" width="193" height="26" fill="url(#csScan)"/><rect x="204" y="106" width="193" height="3" rx="1.5" fill="#2563eb"/></g>
+<g fill="none" stroke="#9cc4ff" stroke-width="4" stroke-linecap="round"><path d="M182 78v-18h18M418 78v-18h-18M182 262v18h18M418 262v18h-18"/></g>
+<g class="cs-badge"><rect x="196" y="318" width="208" height="44" rx="22" fill="#fff"/><path d="M226 330l10 4v8c0 6-4 10-10 12-6-2-10-6-10-12v-8z" fill="#2563eb" transform="translate(-4 -4)"/><rect x="250" y="333" width="96" height="7" rx="3.5" fill="#10233f"/><rect x="250" y="346" width="64" height="5" rx="2.5" fill="#b8c7de"/><circle class="cs-pulse" cx="380" cy="340" r="6" fill="#38a883"/></g>
+</svg> }
+    @default { <svg class="cs-art" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><linearGradient id="csSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbe8ff"/><stop offset="1" stop-color="#f8fbff"/></linearGradient></defs>
+<rect width="600" height="400" fill="url(#csSky)"/>
+<circle class="cs-sun" cx="486" cy="92" r="36" fill="#ffd98a"/>
+<g fill="#fff" opacity=".9"><rect class="cs-cloud" x="70" y="70" width="86" height="16" rx="8"/><rect class="cs-cloud cs-cloud-2" x="110" y="96" width="60" height="12" rx="6"/></g>
+<g><rect x="70" y="182" width="92" height="150" rx="3" fill="#1d3a68"/><rect class="cs-win" style="--k:0" x="82" y="196" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:1" x="106" y="196" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:2" x="130" y="196" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:3" x="82" y="222" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:4" x="106" y="222" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:5" x="130" y="222" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:6" x="82" y="248" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:7" x="106" y="248" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:8" x="130" y="248" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:0" x="82" y="274" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:1" x="106" y="274" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:2" x="130" y="274" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:3" x="82" y="300" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:4" x="106" y="300" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:5" x="130" y="300" width="9" height="13" rx="1.5"/><rect x="172" y="106" width="110" height="226" rx="3" fill="#2a56a0"/><rect class="cs-win" style="--k:6" x="184" y="120" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:7" x="206" y="120" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:8" x="228" y="120" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:0" x="250" y="120" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:1" x="184" y="146" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:2" x="206" y="146" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:3" x="228" y="146" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:4" x="250" y="146" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:5" x="184" y="172" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:6" x="206" y="172" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:7" x="228" y="172" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:8" x="250" y="172" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:0" x="184" y="198" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:1" x="206" y="198" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:2" x="228" y="198" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:3" x="250" y="198" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:4" x="184" y="224" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:5" x="206" y="224" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:6" x="228" y="224" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:7" x="250" y="224" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:8" x="184" y="250" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:0" x="206" y="250" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:1" x="228" y="250" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:2" x="250" y="250" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:3" x="184" y="276" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:4" x="206" y="276" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:5" x="228" y="276" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:6" x="250" y="276" width="9" height="13" rx="1.5"/><rect x="292" y="192" width="84" height="140" rx="3" fill="#16305a"/><rect class="cs-win on" style="--k:7" x="304" y="206" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:8" x="325" y="206" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:0" x="346" y="206" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:1" x="304" y="232" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:2" x="325" y="232" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:3" x="346" y="232" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:4" x="304" y="258" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:5" x="325" y="258" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:6" x="346" y="258" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:7" x="304" y="284" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:8" x="325" y="284" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:0" x="346" y="284" width="9" height="13" rx="1.5"/><rect x="386" y="136" width="104" height="196" rx="3" fill="#3566b5"/><rect class="cs-win on" style="--k:1" x="398" y="150" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:2" x="419" y="150" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:3" x="440" y="150" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:4" x="461" y="150" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:5" x="398" y="176" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:6" x="419" y="176" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:7" x="440" y="176" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:8" x="461" y="176" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:0" x="398" y="202" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:1" x="419" y="202" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:2" x="440" y="202" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:3" x="461" y="202" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:4" x="398" y="228" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:5" x="419" y="228" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:6" x="440" y="228" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:7" x="461" y="228" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:8" x="398" y="254" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:0" x="419" y="254" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:1" x="440" y="254" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:2" x="461" y="254" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:3" x="398" y="280" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:4" x="419" y="280" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:5" x="440" y="280" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:6" x="461" y="280" width="9" height="13" rx="1.5"/><rect x="494" y="214" width="70" height="118" rx="3" fill="#1d3a68"/><rect class="cs-win" style="--k:7" x="506" y="228" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:8" x="531" y="228" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:0" x="506" y="254" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:1" x="531" y="254" width="9" height="13" rx="1.5"/><rect class="cs-win" style="--k:2" x="506" y="280" width="9" height="13" rx="1.5"/><rect class="cs-win on" style="--k:3" x="531" y="280" width="9" height="13" rx="1.5"/></g>
+<g class="cs-crane" stroke="#10233f" stroke-width="3" fill="none" stroke-linecap="round"><path d="M240 104V60h150M240 60l-40 14M390 60v26"/></g>
+<rect x="0" y="332" width="600" height="70" fill="#10233f"/><rect x="0" y="332" width="600" height="4" fill="#2563eb" opacity=".7"/>
+</svg> }
+  }
+</ng-template>
