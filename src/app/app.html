@@ -322,8 +322,102 @@
 
     }
     @case ('process') {
-      <section class="page-hero section-wrap"><p class="eyebrow">OUR PROCESS</p><h1>A thoughtful process, <em>built around you.</em></h1><p class="lead">The right delivery path depends on the product and the people using it. These stages keep the work visible from first conversation through launch.</p></section>
-      <section class="section-wrap section-pad process-list">@for (stage of process; track stage[0]) {<article><span>{{stage[0]}}</span><div><h2>{{stage[1]}}</h2><p>{{stage[2]}}</p></div><svg lucideArrowRight class="icon"></svg></article>}</section>
+           <section class="pr-hero">
+        <div class="pr-wrap pr-hero-grid">
+          <div>
+            <p class="pr-eyebrow">OUR PROCESS</p>
+            <h1>Work with us,<br><em>from first idea to launch.</em></h1>
+            <p class="pr-lead">Explore how we plan, build and support digital products. Share what you need, and we will keep every stage visible so you always know where things stand.</p>
+            <a class="pr-btn pr-btn-dark" routerLink="/contact">Start your project <svg lucideArrowRight class="icon"></svg></a>
+          </div>
+          <ol class="pr-rail" aria-hidden="true">
+            @for (stage of process; track stage[0]; let i = $index) {<li [style.--i]="i"><span>{{stage[0]}}</span>{{stage[1]}}</li>}
+          </ol>
+        </div>
+      </section>
+
+      <section class="pr-intro pr-reveal">
+        <div class="pr-wrap pr-intro-grid">
+          <p>We are one team that builds websites, custom software and mobile apps, and teaches the skills behind them. We start with people, workflows and constraints, and we keep scope and communication open from the first conversation.</p>
+          <div class="pr-counts"><div><b>{{process.length}}</b><span>visible stages</span></div><div><b>{{services.length}}</b><span>services</span></div><div><b>{{courses.length}}</b><span>training paths</span></div></div>
+        </div>
+      </section>
+
+      <section class="pr-section pr-reveal">
+        <div class="pr-wrap">
+          <h2 class="pr-h2">Our working process</h2>
+          <p class="pr-note">This is our standard process. The steps can differ by project so that the approach fits the product and the people using it.</p>
+          <ol class="pr-steps">
+            @for (stage of process; track stage[0]) {<li><span class="pr-num">{{stage[0]}}</span><div><h3>{{stage[1]}}</h3><p>{{stage[2]}}</p></div></li>}
+          </ol>
+          <div class="pr-cta-row"><a class="pr-btn pr-btn-dark" routerLink="/contact">Share your requirements <svg lucideArrowRight class="icon"></svg></a></div>
+        </div>
+      </section>
+
+      <section class="pr-quote pr-reveal">
+        <div class="pr-wrap"><blockquote>Technology should make <em>work better.</em></blockquote><p>That is the idea behind every stage above.</p></div>
+      </section>
+
+      <section class="pr-section pr-reveal">
+        <div class="pr-wrap">
+          <h2 class="pr-h2">What we value</h2>
+          <div class="pr-values">
+            <div><b>Business context first</b><p>We understand your users, workflows and constraints before we propose anything.</p></div>
+            <div><b>Clear, accessible experience</b><p>Interfaces are shaped around user flows and checked for accessibility and responsiveness.</p></div>
+            <div><b>Maintainable by design</b><p>We implement features with maintainable code and iterative reviews.</p></div>
+            <div><b>Open communication</b><p>Scope, priorities and delivery expectations are agreed together and discussed openly.</p></div>
+            <div><b>Continuous improvement</b><p>Testing, review and support help the product keep improving after launch.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pr-section pr-soft pr-reveal">
+        <div class="pr-wrap">
+          <h2 class="pr-h2">Benefits of working with us</h2>
+          <div class="pr-benefits">
+            <article><span>01</span><b>Agreed scope</b><p>Priorities, architecture and delivery expectations are defined together.</p></article>
+            <article><span>02</span><b>Quality checks</b><p>Functionality, accessibility, responsiveness and performance are checked.</p></article>
+            <article><span>03</span><b>Release readiness</b><p>Production configuration and release checks are prepared before launch.</p></article>
+            <article><span>04</span><b>Support after launch</b><p>Maintenance and improvements are discussed within the agreed scope and business hours.</p></article>
+            <article><span>05</span><b>Works with what you have</b><p>Share your existing systems and we can discuss integration and modernization options.</p></article>
+            <article><span>06</span><b>Build and learn</b><p>Software development and practical technical training live under one brand.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="pr-section pr-reveal">
+        <div class="pr-wrap pr-two">
+          <div>
+            <h2 class="pr-h2">How we work together</h2>
+            <p>After you share an enquiry, we review the information you provide and discuss requirements, scope and a suitable next step during business hours.</p>
+            <p>Estimates depend on the agreed scope, requirements and constraints. We talk these through before proposing an approach, so nothing is assumed in advance.</p>
+            <a class="pr-link" routerLink="/services">Explore our services <svg lucideArrowRight class="icon"></svg></a>
+          </div>
+          <div>
+            <h2 class="pr-h2">Preparing your enquiry</h2>
+            <p>A little context helps us give you a useful answer faster. If you can, tell us about:</p>
+            <ul class="pr-checks">
+              @for (item of ['What you want to build and who will use it','The software or tools you use today','Constraints such as budget, timing or integrations','Anyone else who should be part of the conversation']; track item) {<li><svg lucideCheck class="icon"></svg>{{item}}</li>}
+            </ul>
+            <a class="pr-link" routerLink="/contact">Send an enquiry <svg lucideArrowRight class="icon"></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="pr-section pr-soft pr-reveal">
+        <div class="pr-wrap pr-faq">
+          <h2 class="pr-h2">Questions before you start</h2>
+          <div class="faq-list">@for (faq of faqs; track faq[0]) {<details><summary>{{faq[0]}} <svg lucideChevronDown class="icon"></svg></summary><p>{{faq[1]}}</p></details>}</div>
+        </div>
+      </section>
+
+      <section class="pr-final">
+        <div class="pr-wrap">
+          <h2>Ready to work with us?</h2>
+          <p>Tell us what you are building, or explore our services, projects and training.</p>
+          <div class="pr-final-links"><a class="pr-btn pr-btn-light" routerLink="/contact">Start your project <svg lucideArrowRight class="icon"></svg></a><a routerLink="/services">Services</a><a routerLink="/case-studies">Case studies</a><a routerLink="/training">Training</a><a routerLink="/about">About us</a></div>
+        </div>
+      </section>
     }
     @case ('technology') {
       <section class="page-hero section-wrap"><p class="eyebrow">TECHNOLOGY CAPABILITIES</p><h1>Tools are choices. <em>Outcomes are the point.</em></h1><p class="lead">We select technologies in context—based on the product, the team and the needs of long-term maintenance.</p></section>
