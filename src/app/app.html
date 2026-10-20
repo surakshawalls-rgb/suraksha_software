@@ -84,7 +84,7 @@
 
       <section class="sh-section sh-reveal">
         <div class="sh-wrap">
-          <div class="sh-head"><p class="sh-eyebrow">CASE STUDIES</p><h2>From a first catalogue<br><em>to a product people rely on.</em></h2></div>
+          <div class="sh-head"><p class="sh-eyebrow">REAL PROJECTS</p><h2>From a first catalogue<br><em>to a product people rely on.</em></h2></div>
           <div class="sh-stories">
             @for (study of caseStudies; track study.slug) {
               <a class="sh-story" [routerLink]="'/case-studies/' + study.slug">
@@ -223,8 +223,103 @@
       } @else { <section class="page-hero section-wrap"><h1>Case study not found</h1><a routerLink="/case-studies">Browse case studies</a></section> }
     }
     @case ('about') {
-      <section class="page-hero section-wrap"><p class="eyebrow">ABOUT SURAKSHA SOFTWARE</p><h1>Technology should make <em>work better.</em></h1><p class="lead">We design, develop and support digital products that help businesses work smarter, serve customers better and scale with confidence.</p></section>
-      <section class="section-wrap detail-layout section-pad"><div><p class="eyebrow">OUR PURPOSE</p><h2>Business-first <em>by design.</em></h2><p class="detail-copy">Suraksha Software brings software development and practical technical training together under one brand. We start by understanding people, workflows and constraints, then work toward solutions that can be maintained and improved.</p><p class="detail-copy">We do not rely on unverified company statistics or generic promises. Project scope, communication and ongoing support are discussed transparently for each engagement.</p></div><aside class="detail-aside"><h3>How we think about engineering</h3>@for (item of ['Understand the business context','Keep the experience clear and accessible','Build for maintainability','Communicate openly about scope','Improve through review and testing']; track item) {<div class="check-row"><svg lucideCheck class="icon"></svg>{{item}}</div>}</aside></section>
+      <!-- ============ ABOUT (Talentica-style layout, Suraksha Software content) ============ -->
+      <div class="ab-crumb"><div class="ab-wrap"><a routerLink="/">Suraksha Software</a><span>&rsaquo;</span><b>About Us</b></div></div>
+
+      <section class="ab-hero">
+        <div class="ab-wrap ab-hero-grid">
+          <div>
+            <p class="ab-eyebrow">ABOUT SURAKSHA SOFTWARE</p>
+            <h1>Business-first.<br><em>Built to last.</em></h1>
+          </div>
+          <div class="ab-hero-copy">
+            <p>This puts us in a useful space between two worlds: the practical, workflow-first thinking of a business that needs things to work today, and the clean, maintainable engineering that keeps them working tomorrow.</p>
+            <div class="ab-actions"><a class="ab-btn ab-btn-light" routerLink="/contact">Connect with us <svg lucideArrowRight class="icon"></svg></a><a class="ab-btn ab-btn-ghost" routerLink="/services">Explore services</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ab-section ab-reveal">
+        <div class="ab-wrap">
+          <h2 class="ab-h2">How we <em>think</em></h2>
+          <div class="ab-two">
+            <article>
+              <span class="ab-label">The problem</span>
+              <p>Slow, confusing or disconnected digital experiences make it harder for customers and teams to get things done. Spreadsheets and repetitive manual steps hide what is happening in a business and make it hard to improve.</p>
+              <p>Many software projects start with technology and work backwards. The result is a product that looks finished but does not fit the way people actually work.</p>
+            </article>
+            <article>
+              <span class="ab-label">Our approach</span>
+              <p>Suraksha Software brings software development and practical technical training together under one brand. We start by understanding people, workflows and constraints, then build solutions that can be maintained and improved.</p>
+              <p>We do not rely on unverified company statistics or generic promises. Scope, communication and ongoing support are discussed openly for each engagement.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ab-section ab-soft ab-reveal">
+        <div class="ab-wrap">
+          <h2 class="ab-h2">Our core <em>disciplines</em></h2>
+          <div class="ab-people">
+            <article><span class="ab-avatar">W</span><b>Web &amp; mobile engineering</b><small>Responsive websites, portals and mobile apps</small></article>
+            <article><span class="ab-avatar">S</span><b>Custom software</b><small>Workflows, approvals, inventory and reporting</small></article>
+            <article><span class="ab-avatar">D</span><b>Design &amp; experience</b><small>Clear, accessible interfaces and user flows</small></article>
+            <article><span class="ab-avatar">M</span><b>Digital promotion</b><small>Branding, SEO, SMO and business messaging</small></article>
+            <article><span class="ab-avatar">H</span><b>Deployment &amp; support</b><small>Domains, hosting, SSL and maintenance</small></article>
+            <article><span class="ab-avatar">T</span><b>Training</b><small>Project-led technical courses for learners</small></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ab-section ab-reveal">
+        <div class="ab-wrap">
+          <h2 class="ab-h2">Our work <em>speaks</em></h2>
+          <div class="ab-work">
+            @for (study of caseStudies; track study.slug) {
+              <a class="ab-work-card" [routerLink]="'/case-studies/' + study.slug">
+                <div class="cs-visual" [attr.data-kind]="study.kind"><ng-container [ngTemplateOutlet]="csArt" [ngTemplateOutletContext]="{ kind: study.kind }"></ng-container></div>
+                <div class="ab-work-body"><span>{{study.category}}</span><h3>{{study.client}}</h3><p>{{study.summary}}</p><i class="ab-more">Read the case study <svg lucideArrowRight class="icon"></svg></i></div>
+              </a>
+            }
+          </div>
+          <div class="ab-center"><a class="ab-btn ab-btn-dark" routerLink="/case-studies">View all case studies <svg lucideArrowRight class="icon"></svg></a></div>
+        </div>
+      </section>
+
+      <section class="ab-section ab-soft ab-reveal">
+        <div class="ab-wrap">
+          <h2 class="ab-h2">What we <em>stand by</em></h2>
+          <div class="ab-values">
+            @for (item of ['Understand the business context','Keep the experience clear and accessible','Build for maintainability','Communicate openly about scope','Improve through review and testing']; track item; let i = $index) {<div><span>{{(i + 1).toString().padStart(2, '0')}}</span><b>{{item}}</b></div>}
+          </div>
+        </div>
+      </section>
+
+      <section class="ab-section ab-reveal">
+        <div class="ab-wrap">
+          <h2 class="ab-h2">Inside a <em>project</em></h2>
+          <ol class="ab-stages">
+            @for (stage of process; track stage[0]) {<li><span>{{stage[0]}}</span><b>{{stage[1]}}</b><p>{{stage[2]}}</p></li>}
+          </ol>
+        </div>
+      </section>
+
+      <section class="ab-band">
+        <div class="ab-wrap ab-band-inner">
+          <div><p class="ab-band-kicker">Substance matters.</p><h2>Real work, clear scope,<br>honest numbers.</h2><p class="ab-band-sub">{{services.length}} services and {{courses.length}} training paths, delivered through {{process.length}} visible stages.</p></div>
+          <a class="ab-btn ab-btn-light" routerLink="/contact">Connect with us <svg lucideArrowRight class="icon"></svg></a>
+        </div>
+      </section>
+
+      <section class="ab-section ab-reveal">
+        <div class="ab-wrap ab-caps">
+          <h2 class="ab-h2">Our <em>capabilities</em></h2>
+          <ul>
+            @for (service of services; track service.slug) {<li><a [routerLink]="'/services/' + service.slug"><span>{{service.number}}</span>{{service.title}}<svg lucideArrowRight class="icon"></svg></a></li>}
+          </ul>
+        </div>
+      </section>
+
     }
     @case ('process') {
       <section class="page-hero section-wrap"><p class="eyebrow">OUR PROCESS</p><h1>A thoughtful process, <em>built around you.</em></h1><p class="lead">The right delivery path depends on the product and the people using it. These stages keep the work visible from first conversation through launch.</p></section>
