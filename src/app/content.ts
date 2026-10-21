@@ -36,9 +36,10 @@ export type CaseStudy = {
   category: string;
   title: string;
   summary: string;
-  kind: 'carpet' | 'qr' | 'building';
+  kind: 'carpet' | 'qr' | 'building' | 'wall' | 'fire' | 'audit';
   scope: string[];
   stack: string[];
+  url?: string;
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -61,6 +62,39 @@ export const CASE_STUDIES: CaseStudy[] = [
     kind: 'qr',
     scope: ['Mirror-mounted QR safety tag', 'Built for emergency situations involving the owner or driver', 'Quick to scan for anyone nearby'],
     stack: ['QR code']
+  },
+  {
+    slug: 'suraksha-walls',
+    client: 'Suraksha Walls',
+    category: 'Business website',
+    title: 'A website for boundary wall and RCC specialists',
+    summary: 'A business website for Suraksha Walls, presenting its boundary wall and RCC work to customers online.',
+    kind: 'wall',
+    scope: ['Business website for boundary wall and RCC work'],
+    stack: [],
+    url: 'https://www.surakshawalls.space/'
+  },
+  {
+    slug: 'all-india-fire-solutions',
+    client: 'All India Fire Solutions',
+    category: 'Business website',
+    title: 'A service and product website for a fire safety company',
+    summary: 'A multi-page website for a fire safety supplier and service provider, presenting extinguishers, alarm, sprinkler and hydrant systems, maintenance contracts and safety training, with clear ways to get in touch.',
+    kind: 'fire',
+    scope: ['Fire safety services overview', 'Product range for extinguishers, alarms, sprinklers and hydrants', 'Enquiry page and contact details for head and branch offices', 'Quick phone, WhatsApp and email contact options'],
+    stack: [],
+    url: 'https://www.allindiafiresolutions.com/'
+  },
+  {
+    slug: 'square-associates',
+    client: 'Square Associates',
+    category: 'Business website',
+    title: 'A consultancy website for structural audit and building repair',
+    summary: 'A professional website for structural audit and building repair consultants in Mumbai, explaining each service, the team and how to get in touch.',
+    kind: 'audit',
+    scope: ['Service pages for structural audit, NDT testing, rehabilitation, tendering and more', 'About Us, team and blog sections', 'Contact page with phone, email and working hours'],
+    stack: [],
+    url: 'https://www.squareassociates.org/'
   },
   {
     slug: 'shrinathji-developers',

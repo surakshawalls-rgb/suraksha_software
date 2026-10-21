@@ -167,20 +167,30 @@
       </section>
 
       <section class="sh-section sh-soft sh-reveal">
-        <div class="sh-wrap sh-build">
-          <div>
-            <p class="sh-eyebrow">GET GOING</p>
-            <h2>Build fast.<br><em>Build it right.</em></h2>
-            <ol class="sh-steps">
-              <li><span>01</span><div><b>Tell us what you need</b><p>Share your goals, workflow and constraints in a short enquiry.</p></div></li>
-              <li><span>02</span><div><b>We plan and design</b><p>We agree scope, priorities and the shape of the solution together.</p></div></li>
-              <li><span>03</span><div><b>Launch and improve</b><p>We build, test and release, then discuss support within the agreed scope.</p></div></li>
-            </ol>
-            <a class="sh-btn sh-btn-primary" routerLink="/contact">Take your shot <svg lucideArrowRight class="icon"></svg></a>
+        <div class="sh-wrap sh-ai-panel">
+          <div class="sh-ai-copy">
+            <p class="sh-ai-kicker"><span>NEW</span> AI bot development</p>
+            <h3>Add an AI assistant <em>to your business.</em></h3>
+            <p>We build AI bots that answer questions from your own information, capture enquiries and hand the conversation to your team when it matters.</p>
+            <ul class="sh-ai-points">
+              <li><svg lucideCheck class="icon"></svg>Answers grounded in information you approve</li>
+              <li><svg lucideCheck class="icon"></svg>Connected to your website and tools</li>
+              <li><svg lucideCheck class="icon"></svg>Human handover for complex or sensitive requests</li>
+            </ul>
+            <div class="sh-ai-chips"><span>Customer support</span><span>Lead capture</span><span>Messaging apps</span><span>Internal knowledge</span><span>Order &amp; booking</span><span>Voice</span></div>
+            <div class="sh-ai-actions"><a class="sh-btn sh-btn-light" routerLink="/services">Explore AI bot development <svg lucideArrowRight class="icon"></svg></a><a class="sh-btn sh-btn-ghost" routerLink="/contact">Discuss an AI bot</a></div>
+            <p class="sh-ai-fine">Channels, features and effort are agreed during scoping.</p>
           </div>
-          <div class="sh-build-art" aria-hidden="true"><div class="sh-tile t1"></div><div class="sh-tile t2"></div><div class="sh-tile t3"></div><div class="sh-tile t4"></div></div>
+          <div class="sh-ai-chat" aria-label="Illustrative example of a bot conversation">
+            <div class="sh-ai-bar"><i></i><i></i><i></i><span>Illustrative conversation</span></div>
+            <div class="sh-ai-msg sh-ai-user">What services do you offer?</div>
+            <div class="sh-ai-msg sh-ai-bot">We build websites, custom software, mobile apps and more. What are you trying to achieve?</div>
+            <div class="sh-ai-msg sh-ai-user">I need an online catalogue.</div>
+            <div class="sh-ai-msg sh-ai-bot">Got it. I can note your requirements and pass them to the team. May I take your name and email?</div>
+            <div class="sh-ai-typing"><i></i><i></i><i></i></div>
+          </div>
         </div>
-      </section>
+</section>
 
       <section class="sh-section sh-reveal">
         <div class="sh-wrap sh-faq">
@@ -195,9 +205,195 @@
 
     }
     @case ('services') {
-      <section class="page-hero section-wrap"><p class="eyebrow">SOFTWARE DEVELOPMENT SERVICES</p><h1>Digital solutions, <em>built around your business.</em></h1><p class="lead">From a first website to a connected business system, we help turn practical needs into maintainable digital products.</p></section>
-      <section class="section-wrap section-pad"><div class="service-grid service-grid-large">@for (service of services; track service.slug) {<a class="service-card" [routerLink]="'/services/' + service.slug"><span class="service-index"><app-service-icon [name]="service.icon"></app-service-icon></span><h3>{{service.title}}</h3><p>{{service.description}}</p><span class="text-link">Explore service <svg lucideArrowRight class="icon"></svg></span></a>}</div></section>
-      <section class="final-cta"><div class="section-wrap final-cta-inner"><div><h2>Have a project in mind?</h2><p>Tell us about your goals and constraints.</p></div><a class="button button-white" routerLink="/contact">Discuss your project <svg lucideArrowRight class="icon"></svg></a></div></section>
+      <!-- ============ SERVICES (dev.co-style layout, Suraksha Software content + AI bot development) ============ -->
+      <section class="sv-hero">
+        <div class="sv-wrap sv-hero-grid">
+          <div>
+            <p class="sv-kicker">{{services.length}} services · one accountable team</p>
+            <h1>Software development services, <em>end to end.</em></h1>
+            <p class="sv-lead">Discovery, design, build, testing, launch and support, plus AI bot development, handled by one team so nothing falls into the gap between vendors.</p>
+            <div class="sv-actions"><a class="sv-btn sv-btn-light" routerLink="/contact">Scope your project <svg lucideArrowRight class="icon"></svg></a><a class="sv-btn sv-btn-ghost" href="#catalog">See every service</a><a class="sv-btn sv-btn-ghost" href="#ai-bots">AI bot development</a></div>
+            <ul class="sv-badges"><li>Scope agreed together</li><li>Maintainable code</li><li>Support within agreed scope</li></ul>
+          </div>
+          <div class="sv-stats">
+            <div><b>{{services.length}}</b><span>services in one place</span></div>
+            <div><b>{{process.length}}</b><span>visible delivery stages</span></div>
+            <div><b>{{courses.length}}</b><span>training paths alongside</span></div>
+            <div><b>AI</b><span>bots and assistants for your business</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sv-section sv-reveal">
+        <div class="sv-wrap">
+          <p class="sv-eyebrow">WHAT YOU ARE BUYING</p>
+          <h2 class="sv-h2">What software development services <em>actually cover</em></h2>
+          <p class="sv-sub">The phrase covers different kinds of work. Knowing which one you need helps you ask for the right thing.</p>
+          <div class="sv-kinds">
+            <article><span>A</span><h3>Product development</h3><p>Building software that does not exist yet: a website, a portal, an app or a new module. Scope discipline matters most here, because everything is flexible until it is built.</p></article>
+            <article><span>B</span><h3>Integration and platform work</h3><p>Making the systems you already use work together. Share the tools and constraints involved and we can discuss integration options.</p></article>
+            <article><span>C</span><h3>Modernization</h3><p>Moving away from software that still works but is getting harder to maintain, extend or secure, one step at a time.</p></article>
+            <article><span>D</span><h3>Support and improvement</h3><p>Maintenance and improvements after launch, discussed within the agreed scope and business hours.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="catalog" class="sv-section sv-soft sv-reveal">
+        <div class="sv-wrap">
+          <p class="sv-eyebrow">THE CATALOGUE</p>
+          <h2 class="sv-h2">Every discipline a <em>live product needs</em></h2>
+          <p class="sv-sub">Most projects need several of these at once. Buying them from one team keeps design, engineering, promotion and hosting pointing the same way.</p>
+
+          <h3 class="sv-group">Build <small>Software that does not exist yet</small></h3>
+          <div class="sv-cards">
+            @for (service of services; track service.slug) {
+              @if (['web-development','software-development','mobile-app-development','ecommerce'].includes(service.slug)) {
+                <a class="sv-card" [routerLink]="'/services/' + service.slug"><span class="sv-icon"><app-service-icon [name]="service.icon"></app-service-icon></span><span class="sv-no">{{service.number}}</span><h4>{{service.title}}</h4><p>{{service.description}}</p><i class="sv-more">Explore service <svg lucideArrowRight class="icon"></svg></i></a>
+              }
+            }
+          </div>
+
+          <h3 class="sv-group">Grow and reach <small>Be found, trusted and heard</small></h3>
+          <div class="sv-cards">
+            @for (service of services; track service.slug) {
+              @if (['branding-digital-marketing','seo-smo','bulk-sms'].includes(service.slug)) {
+                <a class="sv-card" [routerLink]="'/services/' + service.slug"><span class="sv-icon"><app-service-icon [name]="service.icon"></app-service-icon></span><span class="sv-no">{{service.number}}</span><h4>{{service.title}}</h4><p>{{service.description}}</p><i class="sv-more">Explore service <svg lucideArrowRight class="icon"></svg></i></a>
+              }
+            }
+          </div>
+
+          <h3 class="sv-group">Launch and operate <small>Keep it live and reachable</small></h3>
+          <div class="sv-cards">
+            @for (service of services; track service.slug) {
+              @if (service.slug === 'domain-hosting') {
+                <a class="sv-card" [routerLink]="'/services/' + service.slug"><span class="sv-icon"><app-service-icon [name]="service.icon"></app-service-icon></span><span class="sv-no">{{service.number}}</span><h4>{{service.title}}</h4><p>{{service.description}}</p><i class="sv-more">Explore service <svg lucideArrowRight class="icon"></svg></i></a>
+              }
+            }
+            <a class="sv-card sv-card-ai" href="#ai-bots"><span class="sv-icon sv-icon-ai">AI</span><span class="sv-no">NEW</span><h4>AI Bot Development</h4><p>Chat assistants and support bots that answer questions, capture leads and hand over to your team.</p><i class="sv-more">See AI bot development <svg lucideArrowRight class="icon"></svg></i></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= AI BOT DEVELOPMENT ======================= -->
+      <section id="ai-bots" class="sv-ai">
+        <div class="sv-wrap">
+          <div class="sv-ai-head">
+            <div>
+              <p class="sv-eyebrow sv-eyebrow-light">AI BOT DEVELOPMENT</p>
+              <h2>Put an AI assistant <em>where your customers already ask.</em></h2>
+              <p>We design and build AI bots that answer questions from your own information, connect to the tools you already use, and pass the conversation to a person when it matters. Built into your business, not an afterthought on a page.</p>
+              <div class="sv-actions"><a class="sv-btn sv-btn-light" routerLink="/contact">Discuss an AI bot <svg lucideArrowRight class="icon"></svg></a></div>
+              <p class="sv-fine">Channels, features and effort depend on your requirements and are agreed during scoping.</p>
+            </div>
+            <div class="sv-chat" aria-label="Illustrative example of a bot conversation">
+              <div class="sv-chat-bar"><i></i><i></i><i></i><span>Illustrative conversation</span></div>
+              <div class="sv-msg sv-user">What services do you offer?</div>
+              <div class="sv-msg sv-bot">We build websites, custom software, mobile apps and more. What are you trying to achieve?</div>
+              <div class="sv-msg sv-user">I need an online catalogue.</div>
+              <div class="sv-msg sv-bot">Got it. I can note your requirements and pass them to the team for a follow-up. May I take your name and email?</div>
+              <div class="sv-typing"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+
+          <h3 class="sv-ai-title">What an AI bot can do for your business</h3>
+          <div class="sv-bots">
+            <article><span>01</span><h4>Customer support assistant</h4><p>Answers common questions from your own policies, product details and FAQs, around the clock.</p></article>
+            <article><span>02</span><h4>Website lead-capture bot</h4><p>Welcomes visitors, asks the right questions and passes qualified enquiries to your team.</p></article>
+            <article><span>03</span><h4>Messaging-app bot</h4><p>Brings the same assistant to the messaging channels your customers already use, where the platform allows.</p></article>
+            <article><span>04</span><h4>Internal knowledge assistant</h4><p>Helps staff find answers across handbooks, SOPs and documents without searching folders.</p></article>
+            <article><span>05</span><h4>Order and booking assistant</h4><p>Helps customers check status, make requests or book, connected to your systems.</p></article>
+            <article><span>06</span><h4>Voice assistant</h4><p>A spoken interface for simple, well-defined tasks, scoped carefully for each use case.</p></article>
+          </div>
+
+          <h3 class="sv-ai-title">Built to be useful, not just impressive</h3>
+          <div class="sv-feats">
+            <div><b>Answers from your information</b><p>Responses are grounded in the documents and data you choose, so the bot speaks your business language.</p></div>
+            <div><b>Connected to your tools</b><p>Integrate with your website, forms, databases and APIs so the bot can look things up and act.</p></div>
+            <div><b>Human handover</b><p>Complex, sensitive or unclear requests move to a person, with the conversation context attached.</p></div>
+            <div><b>Multiple languages</b><p>Support for the languages your customers use, tested on real examples for each project.</p></div>
+            <div><b>Clear limits</b><p>The bot is designed to say when it does not know, instead of guessing or inventing an answer.</p></div>
+            <div><b>Reports you can read</b><p>See what people ask, where the bot struggles and what to improve next.</p></div>
+          </div>
+
+          <h3 class="sv-ai-title">How we build an AI bot</h3>
+          <ol class="sv-pipe">
+            <li><span>01</span><b>Define the job</b><p>Agree who the bot serves, what it should do and what it must never do.</p></li>
+            <li><span>02</span><b>Prepare knowledge</b><p>Collect and clean the documents and data the bot is allowed to use.</p></li>
+            <li><span>03</span><b>Design conversations</b><p>Shape the tone, flows and handover points for real situations.</p></li>
+            <li><span>04</span><b>Build and connect</b><p>Develop the bot and link it to your website, tools and data.</p></li>
+            <li><span>05</span><b>Test with real questions</b><p>Check answers against realistic questions before anyone relies on it.</p></li>
+            <li><span>06</span><b>Launch and improve</b><p>Release, review conversations and refine within the agreed scope and business hours.</p></li>
+          </ol>
+
+          <div class="sv-care">
+            <div><h3>Handled with care</h3><p>An AI bot talks to your customers on your behalf, so we treat it like any other part of your product.</p></div>
+            <ul>
+              <li><svg lucideCheck class="icon"></svg>Data use and privacy are discussed up front, before any data is shared.</li>
+              <li><svg lucideCheck class="icon"></svg>Bots are tested against realistic questions and edge cases before launch.</li>
+              <li><svg lucideCheck class="icon"></svg>People stay in the loop, with clear handover to your team.</li>
+              <li><svg lucideCheck class="icon"></svg>No guaranteed accuracy, savings or results are promised in advance.</li>
+            </ul>
+          </div>
+
+          <h3 class="sv-ai-title">AI bot questions</h3>
+          <div class="faq-list sv-ai-faq">
+            <details><summary>What kind of bot do I need? <svg lucideChevronDown class="icon"></svg></summary><p>It depends on the job. A support bot answers questions, a lead-capture bot gathers enquiries, and an internal assistant helps your staff find information. We help you pick one focused use case to start with.</p></details>
+            <details><summary>Will the bot replace my team? <svg lucideChevronDown class="icon"></svg></summary><p>The aim is to handle repetitive questions so your team can focus on work that needs a person. Anything unclear or sensitive is designed to be handed over to your staff.</p></details>
+            <details><summary>How do you keep answers accurate? <svg lucideChevronDown class="icon"></svg></summary><p>We ground the bot in information you approve, test it with realistic questions and design it to admit when it does not know. No tool is perfect, so we also plan for review and improvement after launch.</p></details>
+            <details><summary>What do I need to share to get started? <svg lucideChevronDown class="icon"></svg></summary><p>Tell us who the bot will serve, the questions people ask most, and where your current information lives. The enquiry form is a good place to start.</p></details>
+            <details><summary>How much does an AI bot cost? <svg lucideChevronDown class="icon"></svg></summary><p>Cost depends on the use case, the channels, the integrations and the amount of content involved. We discuss scope and a suitable approach with you first; no fixed estimate is assumed here.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="sv-section sv-reveal">
+        <div class="sv-wrap">
+          <p class="sv-eyebrow">ENGAGEMENT MODELS</p>
+          <h2 class="sv-h2">Three ways to <em>work with us</em></h2>
+          <p class="sv-sub">The right structure depends on whether your scope is clear, your roadmap is ongoing, or your team wants to learn alongside the work. Estimates follow the agreed scope.</p>
+          <div class="sv-models">
+            <article><span class="sv-tag">Defined product</span><h3>Project build</h3><p>You know what you need. We agree scope, priorities and delivery expectations together, then build, test and launch.</p><ul><li><svg lucideCheck class="icon"></svg>Agreed scope and stages</li><li><svg lucideCheck class="icon"></svg>Iterative reviews</li><li><svg lucideCheck class="icon"></svg>Launch checks</li></ul><a class="sv-link" routerLink="/contact">Discuss a project <svg lucideArrowRight class="icon"></svg></a></article>
+            <article class="sv-featured"><span class="sv-tag">Ongoing roadmap</span><h3>Improve and support</h3><p>Your product is live and keeps evolving. We discuss maintenance and improvements within the agreed scope and business hours.</p><ul><li><svg lucideCheck class="icon"></svg>Maintenance and fixes</li><li><svg lucideCheck class="icon"></svg>Planned improvements</li><li><svg lucideCheck class="icon"></svg>Business-hours support</li></ul><a class="sv-link" routerLink="/contact">Ask about support <svg lucideArrowRight class="icon"></svg></a></article>
+            <article><span class="sv-tag">Build and learn</span><h3>Training alongside</h3><p>Develop the skills behind the software, with practical training paths in frontend, backend, Python, C and C++, Go and more.</p><ul><li><svg lucideCheck class="icon"></svg>Project-led learning</li><li><svg lucideCheck class="icon"></svg>{{courses.length}} training paths</li><li><svg lucideCheck class="icon"></svg>Details shared once confirmed</li></ul><a class="sv-link" routerLink="/training">Explore training <svg lucideArrowRight class="icon"></svg></a></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="sv-section sv-soft sv-reveal">
+        <div class="sv-wrap">
+          <p class="sv-eyebrow">HOW AN ENGAGEMENT RUNS</p>
+          <h2 class="sv-h2">A path you can <em>follow</em></h2>
+          <ol class="sv-timeline">
+            @for (stage of process; track stage[0]) {<li><span>{{stage[0]}}</span><b>{{stage[1]}}</b><p>{{stage[2]}}</p></li>}
+          </ol>
+          <div class="sv-center"><a class="sv-btn sv-btn-dark" routerLink="/process">See the full process <svg lucideArrowRight class="icon"></svg></a></div>
+        </div>
+      </section>
+
+      <section class="sv-section sv-reveal">
+        <div class="sv-wrap">
+          <p class="sv-eyebrow">ENGINEERING STANDARDS</p>
+          <h2 class="sv-h2">What every service <em>has in common</em></h2>
+          <div class="sv-standards">
+            <div><b>Responsive by default</b><p>Interfaces are planned to work across phones, tablets and desktops.</p></div>
+            <div><b>Accessible interaction</b><p>Clear, accessible patterns are part of the design, not an afterthought.</p></div>
+            <div><b>Tested before launch</b><p>Functionality, accessibility, responsiveness and performance are checked.</p></div>
+            <div><b>Maintainable code</b><p>Implementation is built for the people who will maintain it next.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sv-section sv-soft sv-reveal">
+        <div class="sv-wrap sv-faq">
+          <div><p class="sv-eyebrow">QUESTIONS</p><h2 class="sv-h2">Buying software <em>development services</em></h2></div>
+          <div class="faq-list">@for (faq of faqs; track faq[0]) {<details><summary>{{faq[0]}} <svg lucideChevronDown class="icon"></svg></summary><p>{{faq[1]}}</p></details>}</div>
+        </div>
+      </section>
+
+      <section class="sv-final">
+        <div class="sv-wrap sv-final-inner"><div><h2>Not sure which service you need?</h2><p>That is what discovery is for. Tell us about your goals and constraints, and we will discuss a sensible next step.</p></div><div class="sv-actions"><a class="sv-btn sv-btn-light" routerLink="/contact">Discuss your project <svg lucideArrowRight class="icon"></svg></a><a class="sv-btn sv-btn-ghost" href="#ai-bots">Ask about AI bots</a></div></div>
+      </section>
+
     }
     @case ('service-detail') {
       @if (selectedService(); as service) {
@@ -217,7 +413,7 @@
       @if (selectedCaseStudy(); as study) {
         <section class="page-hero section-wrap"><a class="breadcrumb" routerLink="/case-studies">Case studies <span>/</span> {{study.client}}</a><p class="eyebrow">{{study.category}}</p><h1>{{study.title}}</h1><p class="lead">{{study.summary}}</p></section>
         <section class="section-wrap"><div class="cs-visual cs-visual-hero" [attr.data-kind]="study.kind"><ng-container [ngTemplateOutlet]="csArt" [ngTemplateOutletContext]="{ kind: study.kind }"></ng-container></div></section>
-        <section class="section-wrap detail-layout section-pad"><div><p class="eyebrow">THE PROJECT</p><h2>About {{study.client}}.</h2><p class="detail-copy">{{study.summary}}</p>@if (study.scope.length) {<p class="eyebrow space-top">WHAT THE PROJECT COVERS</p>@for (item of study.scope; track item) {<div class="check-row"><svg lucideCheck class="icon"></svg>{{item}}</div>}}</div><aside class="detail-aside"><h3>Project details</h3><div class="check-row"><svg lucideCheck class="icon"></svg>{{study.category}}</div>@if (study.stack.length) {<h3>Technology</h3><div class="tech-tags">@for (tech of study.stack; track tech) {<span>{{tech}}</span>}</div>}</aside></section>
+        <section class="section-wrap detail-layout section-pad"><div><p class="eyebrow">THE PROJECT</p><h2>About {{study.client}}.</h2><p class="detail-copy">{{study.summary}}</p>@if (study.scope.length) {<p class="eyebrow space-top">WHAT THE PROJECT COVERS</p>@for (item of study.scope; track item) {<div class="check-row"><svg lucideCheck class="icon"></svg>{{item}}</div>}}</div><aside class="detail-aside"><h3>Project details</h3><div class="check-row"><svg lucideCheck class="icon"></svg>{{study.category}}</div>@if (study.stack.length) {<h3>Technology</h3><div class="tech-tags">@for (tech of study.stack; track tech) {<span>{{tech}}</span>}</div>}@if (study.url) {<h3>Live website</h3><a class="text-link" [href]="study.url" target="_blank" rel="noopener noreferrer">Visit {{study.client}} <svg lucideArrowRight class="icon"></svg></a>}</aside></section>
         <section class="related-links section-wrap section-pad"><p class="eyebrow">MORE CASE STUDIES</p><div class="related-pills">@for (other of caseStudies; track other.slug) { @if (other.slug !== study.slug) {<a [routerLink]="'/case-studies/' + other.slug">{{other.client}} <svg lucideArrowRight class="icon"></svg></a>} }</div></section>
         <section class="final-cta"><div class="section-wrap final-cta-inner"><div><h2>Have a project in mind?</h2><p>Tell us about your goals and constraints.</p></div><a class="button button-white" routerLink="/contact">Discuss your project <svg lucideArrowRight class="icon"></svg></a></div></section>
       } @else { <section class="page-hero section-wrap"><h1>Case study not found</h1><a routerLink="/case-studies">Browse case studies</a></section> }
@@ -322,7 +518,8 @@
 
     }
     @case ('process') {
-           <section class="pr-hero">
+      <!-- ============ PROCESS (Work-with-us style layout, Suraksha Software content) ============ -->
+      <section class="pr-hero">
         <div class="pr-wrap pr-hero-grid">
           <div>
             <p class="pr-eyebrow">OUR PROCESS</p>
@@ -418,6 +615,7 @@
           <div class="pr-final-links"><a class="pr-btn pr-btn-light" routerLink="/contact">Start your project <svg lucideArrowRight class="icon"></svg></a><a routerLink="/services">Services</a><a routerLink="/case-studies">Case studies</a><a routerLink="/training">Training</a><a routerLink="/about">About us</a></div>
         </div>
       </section>
+
     }
     @case ('technology') {
       <section class="page-hero section-wrap"><p class="eyebrow">TECHNOLOGY CAPABILITIES</p><h1>Tools are choices. <em>Outcomes are the point.</em></h1><p class="lead">We select technologies in context—based on the product, the team and the needs of long-term maintenance.</p></section>
@@ -469,13 +667,48 @@
     }
   }
 </main>
-<footer class="site-footer">
-  <div class="section-wrap footer-grid"><div class="footer-brand"><a class="brand brand-light" routerLink="/"><span class="brand-mark">S<span>.</span></span><span>SURAKSHA<small>SOFTWARE</small></span></a><p>End-to-end digital solutions<br>engineered for business.</p></div>
-    <div><h3>Explore</h3><a routerLink="/services">Services</a><a routerLink="/case-studies">Case studies</a><a routerLink="/about">About us</a><a routerLink="/process">Our process</a><a routerLink="/technology">Technology</a></div>
-    <div><h3>Training</h3><a routerLink="/training">Training institute</a>@for (course of courses.slice(0,4); track course.slug) {<a [routerLink]="'/training/' + course.slug">{{course.title}}</a>}</div>
-    <div><h3>Get in touch</h3><a routerLink="/contact">Discuss a project</a><a routerLink="/contact">Ask about training</a><p class="footer-hours">Support and maintenance options are based on agreed scope and business hours.</p></div>
-  </div><div class="section-wrap footer-bottom"><span>© {{year}} Suraksha Software</span><div><a routerLink="/privacy-policy">Privacy policy</a><a routerLink="/terms-and-conditions">Terms and conditions</a></div><span>Details and capabilities confirmed per engagement.</span></div>
+<footer class="site-footer ft">
+  <div class="section-wrap ft-top">
+    <div class="ft-brand"><a class="brand brand-light" routerLink="/"><span class="brand-mark">S<span>.</span></span><span>SURAKSHA<small>SOFTWARE</small></span></a><p>End-to-end digital solutions engineered for business.</p></div>
+    <a class="ft-cta" routerLink="/contact">Start your project <svg lucideArrowRight class="icon"></svg></a>
+  </div>
+
+  <div class="section-wrap footer-grid ft-grid">
+    <div><h3>Services</h3>@for (service of services; track service.slug) {<a [routerLink]="'/services/' + service.slug">{{service.title}}</a>}<a routerLink="/services">AI bot development</a></div>
+    <div><h3>Case studies</h3>@for (study of caseStudies; track study.slug) {<a [routerLink]="'/case-studies/' + study.slug">{{study.client}}</a>}<a routerLink="/case-studies">All case studies</a></div>
+    <div><h3>Training</h3><a routerLink="/training">Training institute</a>@for (course of courses.slice(0,5); track course.slug) {<a [routerLink]="'/training/' + course.slug">{{course.title}}</a>}</div>
+    <div><h3>Company</h3><a routerLink="/about">About us</a><a routerLink="/process">Our process</a><a routerLink="/technology">Technology</a><a routerLink="/case-studies">Our work</a></div>
+    <div><h3>Support</h3><a routerLink="/contact">Contact us</a><a routerLink="/contact">Discuss a project</a><a routerLink="/contact">Ask about training</a><a routerLink="/privacy-policy">Privacy policy</a><a routerLink="/terms-and-conditions">Terms and conditions</a></div>
+  </div>
+
+    <div class="section-wrap ft-offices">
+    <h3>Our offices</h3>
+    <div class="ft-office-grid">
+      <address>
+        <span>Head office</span>
+        <b>Chennai</b>
+        <p>Suraksha Software<br>Old no 6/2, New no 9, Thiruveedhi Amman Koil 2nd Street,<br>Thiruvalluvar Nagar, Thiruvanmiyur,<br>Chennai 600041</p>
+        <p class="ft-landmark"><em>Landmark:</em> Thiruveedhi Amman Koil, Thiruvanmiyur</p>
+        <a class="ft-phone" href="tel:+919506629814">Mo: +91 95066 29814</a>
+      </address>
+      <address>
+  <span>Second office</span>
+  <b>Kanpur</b>
+  <p>Suraksha Software<br>48/40, Lathimohal, Generalganj,<br>Kanpur, Uttar Pradesh, India</p>
+  <p class="ft-landmark"><em>Landmark:</em> Near Doodh Bhandar, Lathimohal</p>
+  <a class="ft-phone" href="tel:+918090272727">Mo: +91 80902 72727</a>
+</address>
+      <address><span>Third office</span><b>Mumbai</b><p>Maharashtra</p></address>
+      <div class="ft-call"><span>Call us</span><a href="tel:+919506629814">+91 95066 29814</a><a href="tel:+918090272727">+91 80902 72727</a></div>
+    </div>
+  </div>
+
+  <div class="section-wrap footer-bottom ft-bottom"><span>© {{year}} Suraksha Software</span><div><a routerLink="/privacy-policy">Privacy policy</a><a routerLink="/terms-and-conditions">Terms and conditions</a></div><span>Details and capabilities confirmed per engagement.</span></div>
 </footer>
+<a class="wa-float" href="https://wa.me/qr/CDFHKJ7DJ6LKD1" target="_blank" rel="noopener noreferrer" aria-label="Chat with Suraksha Software on WhatsApp">
+  <svg class="wa-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  <span class="wa-label">Chat on WhatsApp</span>
+</a>
 <ng-template #csArt let-kind="kind">
   @switch (kind) {
     @case ('carpet') { <svg class="cs-art" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -495,6 +728,82 @@
 <g class="cs-scan"><rect x="204" y="82" width="193" height="26" fill="url(#csScan)"/><rect x="204" y="106" width="193" height="3" rx="1.5" fill="#2563eb"/></g>
 <g fill="none" stroke="#9cc4ff" stroke-width="4" stroke-linecap="round"><path d="M182 78v-18h18M418 78v-18h-18M182 262v18h18M418 262v18h-18"/></g>
 <g class="cs-badge"><rect x="196" y="318" width="208" height="44" rx="22" fill="#fff"/><path d="M226 330l10 4v8c0 6-4 10-10 12-6-2-10-6-10-12v-8z" fill="#2563eb" transform="translate(-4 -4)"/><rect x="250" y="333" width="96" height="7" rx="3.5" fill="#10233f"/><rect x="250" y="346" width="64" height="5" rx="2.5" fill="#b8c7de"/><circle class="cs-pulse" cx="380" cy="340" r="6" fill="#38a883"/></g>
+</svg> }
+    @case ('wall') { <svg class="cs-art" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><linearGradient id="csWallSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e1ebfa"/><stop offset="1" stop-color="#f7f9fd"/></linearGradient></defs>
+<rect width="600" height="400" fill="url(#csWallSky)"/>
+<circle class="cs-sun" cx="504" cy="84" r="34" fill="#ffd98a"/>
+<g fill="#fff" opacity=".9"><rect class="cs-cloud" x="70" y="70" width="86" height="16" rx="8"/><rect class="cs-cloud cs-cloud-2" x="110" y="96" width="60" height="12" rx="6"/></g>
+<rect x="0" y="322" width="600" height="78" fill="#10233f"/><rect x="0" y="322" width="600" height="4" fill="#2563eb" opacity=".7"/>
+<rect x="50" y="132" width="22" height="190" rx="2" fill="#7f93b4"/>
+<rect class="cs-wp" style="--k:0" x="72" y="150" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect class="cs-wp" style="--k:1" x="72" y="184" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect class="cs-wp" style="--k:2" x="72" y="218" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect class="cs-wp" style="--k:3" x="72" y="252" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect class="cs-wp" style="--k:4" x="72" y="286" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect x="200" y="132" width="22" height="190" rx="2" fill="#7f93b4"/>
+<rect class="cs-wp" style="--k:5" x="222" y="150" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect class="cs-wp" style="--k:6" x="222" y="184" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect class="cs-wp" style="--k:7" x="222" y="218" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect class="cs-wp" style="--k:8" x="222" y="252" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect class="cs-wp" style="--k:9" x="222" y="286" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect x="350" y="132" width="22" height="190" rx="2" fill="#7f93b4"/>
+<rect class="cs-wp" style="--k:10" x="372" y="150" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect class="cs-wp" style="--k:11" x="372" y="184" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect class="cs-wp" style="--k:12" x="372" y="218" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect class="cs-wp" style="--k:13" x="372" y="252" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect class="cs-wp" style="--k:14" x="372" y="286" width="128" height="32" rx="2" fill="#b9c7dc" stroke="#8fa2c0" stroke-width="2"/>
+<rect x="500" y="132" width="22" height="190" rx="2" fill="#7f93b4"/>
+<g class="cs-tag"><rect x="206" y="72" width="188" height="46" rx="23" fill="#fff"/><path d="M236 84l10 4v8c0 6-4 10-10 12-6-2-10-6-10-12v-8z" fill="#2563eb"/><text x="260" y="101" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="800" fill="#10233f">RCC Boundary Walls</text></g>
+</svg> }
+    @case ('fire') { <svg class="cs-art" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><linearGradient id="csFireBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0e2038"/><stop offset="1" stop-color="#5a1f2a"/></linearGradient></defs>
+<rect width="600" height="400" fill="url(#csFireBg)"/>
+<g fill="none" stroke="#ff8a6b"><circle class="cs-ring" cx="300" cy="214" r="120" stroke-width="1.5"/><circle class="cs-ring cs-ring-2" cx="300" cy="214" r="120" stroke-width="1.5"/></g>
+<path class="cs-flame" d="M300 52c20 26 36 42 36 66a36 36 0 0 1-72 0c0-14 6-24 14-34 4 12 10 18 16 20-6-22-2-36 6-52z" fill="#ff7a45"/>
+<path class="cs-flame cs-flame-2" d="M300 86c10 14 18 22 18 36a18 18 0 0 1-36 0c0-8 4-14 8-18 2 6 5 9 8 10-3-12-1-20 2-28z" fill="#ffd27a"/>
+<rect x="262" y="160" width="76" height="168" rx="22" fill="#d6342f"/>
+<rect x="284" y="140" width="32" height="26" rx="6" fill="#2b3a55"/><rect x="272" y="132" width="56" height="12" rx="6" fill="#4a5a78"/>
+<path d="M328 144c36 0 54 14 62 46" fill="none" stroke="#2b3a55" stroke-width="7" stroke-linecap="round"/>
+<rect x="274" y="210" width="52" height="70" rx="8" fill="#fff"/><rect x="282" y="222" width="36" height="7" rx="3.5" fill="#10233f"/><rect x="282" y="238" width="28" height="5" rx="2.5" fill="#b8c7de"/><rect x="282" y="250" width="32" height="5" rx="2.5" fill="#b8c7de"/>
+<g class="cs-badge"><rect x="62" y="296" width="176" height="52" rx="26" fill="#fff"/><path d="M92 308l10 4v8c0 6-4 10-10 12-6-2-10-6-10-12v-8z" fill="#d6342f"/><rect x="114" y="312" width="86" height="7" rx="3.5" fill="#10233f"/><rect x="114" y="326" width="56" height="5" rx="2.5" fill="#b8c7de"/><circle class="cs-pulse" cx="214" cy="322" r="6" fill="#38a883"/></g>
+</svg> }
+    @case ('audit') { <svg class="cs-art" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><linearGradient id="csAuditBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6eefb"/><stop offset="1" stop-color="#f8fbff"/></linearGradient></defs>
+<rect width="600" height="400" fill="url(#csAuditBg)"/>
+<rect x="0" y="332" width="600" height="68" fill="#10233f"/><rect x="0" y="332" width="600" height="4" fill="#2563eb" opacity=".7"/>
+<rect x="190" y="70" width="170" height="262" rx="4" fill="#2a56a0"/>
+<rect class="cs-win on" style="--k:0" x="206" y="88" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:1" x="244" y="88" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:2" x="282" y="88" width="22" height="22" rx="2"/>
+<rect class="cs-win on" style="--k:3" x="320" y="88" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:4" x="206" y="126" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:5" x="244" y="126" width="22" height="22" rx="2"/>
+<rect class="cs-win on" style="--k:6" x="282" y="126" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:7" x="320" y="126" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:8" x="206" y="164" width="22" height="22" rx="2"/>
+<rect class="cs-win on" style="--k:0" x="244" y="164" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:1" x="282" y="164" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:2" x="320" y="164" width="22" height="22" rx="2"/>
+<rect class="cs-win on" style="--k:3" x="206" y="202" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:4" x="244" y="202" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:5" x="282" y="202" width="22" height="22" rx="2"/>
+<rect class="cs-win on" style="--k:6" x="320" y="202" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:7" x="206" y="240" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:8" x="244" y="240" width="22" height="22" rx="2"/>
+<rect class="cs-win on" style="--k:0" x="282" y="240" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:1" x="320" y="240" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:2" x="206" y="278" width="22" height="22" rx="2"/>
+<rect class="cs-win on" style="--k:3" x="244" y="278" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:4" x="282" y="278" width="22" height="22" rx="2"/>
+<rect class="cs-win" style="--k:5" x="320" y="278" width="22" height="22" rx="2"/>
+<path d="M290 70l-14 40 18 24-10 36 16 30" fill="none" stroke="#10233f" stroke-width="2.5" stroke-linecap="round" opacity=".55"/>
+<g class="cs-ascan"><rect x="178" y="70" width="194" height="6" rx="3" fill="#5b9bff"/><rect x="178" y="76" width="194" height="40" fill="#5b9bff" opacity=".18"/></g>
+<g fill="#fff"><rect x="62" y="92" width="96" height="128" rx="10" stroke="#c9d8f0" stroke-width="2"/></g>
+<rect x="96" y="84" width="28" height="14" rx="5" fill="#10233f"/>
+<g fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M78 124l6 6 10-12"/><path d="M78 154l6 6 10-12"/><path d="M78 184l6 6 10-12"/></g>
+<g fill="#b8c7de"><rect x="106" y="122" width="40" height="6" rx="3"/><rect x="106" y="152" width="34" height="6" rx="3"/><rect x="106" y="182" width="38" height="6" rx="3"/></g>
+<g class="cs-badge"><rect x="388" y="250" width="164" height="52" rx="26" fill="#fff"/><circle class="cs-pulse" cx="416" cy="276" r="7" fill="#38a883"/><rect x="434" y="266" width="82" height="7" rx="3.5" fill="#10233f"/><rect x="434" y="280" width="54" height="5" rx="2.5" fill="#b8c7de"/></g>
 </svg> }
     @default { <svg class="cs-art" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
 <defs><linearGradient id="csSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbe8ff"/><stop offset="1" stop-color="#f8fbff"/></linearGradient></defs>
