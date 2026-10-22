@@ -68,7 +68,7 @@ Deno.serve(async (request) => {
     request.headers.get('x-real-ip') || forwarded || 'unknown';
   const rateSecret = Deno.env.get('RATE_LIMIT_SECRET');
   const supabaseUrl = Deno.env.get('SUPABASE_URL');
-  const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+  const serviceRoleKey = Deno.env.get('SERVICE_ROLE_KEY');
   if (!rateSecret || !supabaseUrl || !serviceRoleKey) {
     return Response.json({ error: 'Enquiry service is not configured.' }, { status: 503, headers: corsHeaders });
   }

@@ -10,9 +10,11 @@ if (url && !/^https:\/\/[a-z0-9.-]+$/i.test(url)) {
   throw new Error('SUPABASE_URL must be an HTTPS Supabase project URL.');
 }
 
-const contents = `globalThis.__SUPABASE_URL__ = ${JSON.stringify(url || undefined)};\n` +
-  `globalThis.__SUPABASE_ANON_KEY__ = ${JSON.stringify(key || undefined)};\n`;
-await writeFile(new URL('../public/runtime-config.js', import.meta.url), contents);
+if (url && key) {
+  const contents = `globalThis.__SUPABASE_URL__ = ${JSON.stringify(url)};\n` +
+    `globalThis.__SUPABASE_ANON_KEY__ = ${JSON.stringify(key)};\n`;
+  await writeFile(new URL('../public/runtime-config.js', import.meta.url), contents);
+}
 
 const siteUrl = process.env.PUBLIC_SITE_URL?.trim();
 const parsed = siteUrl ? new URL(siteUrl) : undefined;

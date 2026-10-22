@@ -1,2 +1,2 @@
-globalThis.__SUPABASE_URL__ = undefined;
-globalThis.__SUPABASE_ANON_KEY__ = undefined;
+globalThis.__SUPABASE_URL__ = 'https://oeracmaaotknncjwmvgo.supabase.co';
+globalThis.__SUPABASE_ANON_KEY__ = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9lcmFjbWFhb3Rrbm5jandtdmdvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0ODQ3ODMsImV4cCI6MjEwNTA2MDc4M30.TvQGoGRjM7mW-K42hX1p3BzritS8KQ47ahe4cEEy_QU';
